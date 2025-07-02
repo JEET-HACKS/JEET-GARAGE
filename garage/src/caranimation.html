@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Car Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            perspective: 1000px;
+        }
+
+        .car {
+            width: 300px;
+            height: 200px;
+            background-image: url('Car2.webp'); /* Replace with your car image */
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            transform-style: preserve-3d;
+            animation: rotateCar 10s infinite linear;
+        }
+
+        @keyframes rotateCar {
+            0% {
+                transform: rotateX(0deg);
+            }
+            100% {
+                transform: rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="car"></div>
+</div>
+
+<script>
+    // You can adjust the rotation speed by changing the duration in the CSS animation
+    const carElement = document.querySelector('.car');
+
+    // Optional: You can also control the animation with JavaScript
+    let angle = 0;
+    function rotateCar() {
+        angle += 1;
+        carElement.style.transform = `rotateX(${angle}deg)`;
+        requestAnimationFrame(rotateCar);
+    }
+
+    rotateCar();  // Start the rotation
+</script>
+
+</body>
+</html>

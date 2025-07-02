@@ -1,0 +1,455 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+/*body{
+  margin: 0;
+  
+  background-image: url('/public/gbackground (2).jpg');
+  background-size: cover;
+  background-position:left;
+  background-attachment: fixed;
+  background-color: black;
+  
+}*/
+body{
+     background-color: #ebe9e9 !important;
+}
+
+
+.App {
+  text-align: center;
+}
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo{
+  border-radius: 10px;
+}
+/*.img {
+  margin: 0;
+  height: 100vh;
+/*  background-image: url('/public/gbackground (2).jpg');*/
+ /* background-size: cover;
+  background-position:left;
+  background-attachment: fixed;
+  color: white;*/
+  
+/*}*/*/
+/*40.54,66,1*/
+.navbar{
+  background-color: #80563e;
+}
+.navbar-nav a{
+  font-weight: 700;
+  margin-right: 20px;
+  color: #fff;
+
+}
+.input{
+  margin-bottom: 10px;
+}
+.LoginBox{
+  margin-top: 30px;
+  width: 30%;
+ margin-left: auto;
+/*  margin: 0 auto;*/
+  border: 1px solid white;
+  border-radius: 10px;
+  padding:20px 22px 0;
+ 
+  height: 400px;
+  background-color: chocolate;
+  margin-right: 50px;
+}
+.LoginBox btn-success {
+  width: 100%;
+}
+.form-label{
+  display: flex;
+  color: #fff;
+  font-weight: 700;
+}
+.LoginBox input[type="button"] {
+  width: 100%;
+  font-weight: 700;
+}
+.LoginBox a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: left;
+}
+
+.compo{
+  margin-top: 15px;
+}
+
+.compo .row input[class="btn btn-success"],input[class="btn btn-primary"],input[class="btn btn-danger"],input[class="btn btn-secondary"],input[class="btn btn-info"]{
+  height: 100px;
+  padding: 22px;
+  font-weight: 700;
+  width: 200px;
+}
+.add{
+  width: 150px;
+  font-weight: 700;
+}
+.mname{
+  margin-bottom: 10px;
+}
+.AddMechanic_box{
+  width: 36%;
+  text-align: left;
+}
+.mechdetail ul li,.VehicleData ul li{
+  list-style: none;
+  display: inline-block;
+  font-weight: 700;
+  width: 180px;
+  border: 1px solid black;
+  padding: 10px;
+  height: 46PX;
+
+}
+.mechdetail ul{
+  margin: 0;
+ 
+}
+.last{
+  height: 46px; 
+}
+.XYZ{
+    position: relative;
+    top: 5px;
+}
+.happy{
+
+  height: 46px;
+   position: relative;
+  top:15px;
+}
+.text-left{
+  text-align: left;
+}
+.row input[value="+"]{
+  border: 2px solid black;
+  margin-top: 10px;
+  font-weight: 700;
+}
+@media (min-width: 950px) {
+  .newdiv {
+   
+    width: 80%;
+  }
+}
+.newdiv{
+  
+  width: 30%;
+  position: relative;
+  bottom: 150px;
+  z-index: 999;
+  border: 2px solid black;
+  padding: 15px;
+  
+  border-radius: 10px;
+  background: ghostwhite;
+  margin: 0 auto;
+}
+.VehicleData{
+  margin-top: 10px;
+}
+.box{
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .btn btn-secondary {
+    margin-left: 10px;  /* Add left margin */
+    margin-right: 10px; /* Add right margin */
+    overflow-x: auto;   /* Ensure horizontal scrolling works on small screens */
+  }
+}
+table{
+  text-align: left;
+  min-width: 1000px;
+  border: 1px solid black !important;
+}
+
+body{
+  background-color: black;
+}
+
+
+
+th{
+  background-color: #487fb1 !important;
+  color: white !important;
+  padding: 10px !important;
+}
+p {
+  width: 100% !important;
+  word-break: break-all;
+ }
+
+.image-container {
+  width: 300px; /* Adjust size */
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.rotate-car {
+  width: 100%;
+  height: 100%;
+  animation: rotate 10s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+
+
+/*----------------------*/
+
+/*sidebar*/
+.main .SidebarWrapper{
+   min-width: 300px;
+   flex: 0 0 20%;
+/*   transform: translateX(-100%);*/
+
+   transition: all 0.5s ease-in-out;
+   z-index: 10000000;
+}
+.main .SidebarWrapper .Sidebar{
+   transform: translateX(-100%);
+  min-width: 300px;
+  height: 100vh;
+  position: fixed;
+  left: 0px;
+  background: #fff;
+   transition: all 0.5s ease-in-out;
+   
+}
+
+ .Sidebar.open{
+   transform: translateX(0) !important;
+   z-index: 100000000;
+  
+  
+}
+.main .SidebarWrapper .Sidebar ul{
+   margin-bottom: 0px;
+   padding-left: 0px;
+    padding: 12px 15px;
+    border-radius: 10PX;
+}
+.main .SidebarWrapper .Sidebar ul li{
+   list-style: none;
+}
+.main .SidebarWrapper .Sidebar ul li button{
+   color: #000;
+   justify-content: left;
+   padding: 12px 10px;
+   text-transform: capitalize;
+   font-family: 'arial';
+   
+
+}
+.main .SidebarWrapper .Sidebar ul li button .icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.main .SidebarWrapper .Sidebar ul li button .icon svg{
+  color: #000;
+  opacity: 0.8;
+  font-size: 22px;
+}
+.main .SidebarWrapper .Sidebar ul li button .arrow{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+}
+
+/*@media screen and (min-width: 768px) {
+     .content {
+        width: 80.5%;
+        width: -ms-80 .5%;
+        float: left;
+        -webkit-transition: all 0.3sease-out;
+        -moz-transition: all 0.3s ease-out;
+        -ms-transition: all 0.3s ease-out;
+        -o-transition: all 0.3s ease-out;
+        transition: all 0.3sease-out;
+    }
+}*/
+/*sidebar*/
+
+header{
+  background: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.right-content{
+  padding: 15px 15px;
+}
+.DashBoardWrapperBox {
+  gap:22px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.DashBoardWrapperBox .DashBoardBox{
+  width: 30%;
+  height: 160px;
+  background: darkgoldenrod;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 15px;
+}
+.DashBoardWrapperBoxRow .Box{
+  width: 100%;
+  height:100%;
+  background: darkgoldenrod;
+}
+
+/*new*/
+
+.userdiv{
+    display:none;
+    border: 1PX solid black;
+}
+.userdiv.open{
+   display:block;
+    border: 1PX solid black;
+    z-index: 100000000;
+    min-width: 300px;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+.bg-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0e1446, #3555aa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-card {
+  background-color: #1f2a4d;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.login-card input {
+  background-color: #2b3a65;
+  color: white;
+  border: none;
+}
+
+/*.bg-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0e1446, #3555aa);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.login-card {
+  background-color: #1f2a4d;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.login-card input {
+  background-color: #2b3a65;
+  color: white;
+  border: none;
+}
+
+.login-card input::placeholder {
+  color: #ccc;
+}
+
+.login-card input:focus {
+  box-shadow: none;
+  outline: none;
+  background-color: #324074;
+  color: #fff;
+}
+
+.login-card .btn {
+  background-color: #3c6ef0;
+  border: none;
+}
+
+.login-card .btn:hover {
+  background-color: #335edf;
+}
+
+.login-logo {
+  font-size: 36px;
+}*/

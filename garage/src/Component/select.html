@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkbox Dropdown</title>
+  <style>
+    /* Style for the dropdown button */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-button {
+      padding: 10px;
+      background-color: #000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* The container holding the dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    /* Show the dropdown when hovered */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Style for the checkbox options */
+    .dropdown-content label {
+      padding: 8px;
+      display: block;
+      cursor: pointer;
+    }
+
+    .dropdown-content input {
+      margin-right: 8px;
+    }
+
+    /* Style for the close button */
+    .close-button {
+      background-color: #f44336;
+      color: white;
+      padding: 6px 12px;
+      margin: 10px 0;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- The dropdown container -->
+  <div class="dropdown">
+    <select class="dropdown-button" style="width: 200px;">Select Fruits</Select>
+    <div class="dropdown-content">
+      <label><input type="checkbox" value="apple"> Apple</label>
+      <label><input type="checkbox" value="banana"> Banana</label>
+      <label><input type="checkbox" value="cherry"> Cherry</label>
+      <label><input type="checkbox" value="date"> Date</label>
+      <label><input type="checkbox" value="grape"> Grape</label>
+      <button class="close-button" onclick="closeDropdown()">Done</button>
+    </div>
+  </div>
+
+  <script>
+    // Close the dropdown when the user presses the "Done" button
+    function closeDropdown() {
+      const checkboxes = document.querySelectorAll('.dropdown-content input[type="checkbox"]');
+      let selectedValues = [];
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.checked) {
+          selectedValues.push(checkbox.value);
+        }
+      });
+      alert("Selected fruits: " + selectedValues.join(", "));
+    }
+  </script>
+
+</body>
+</html>

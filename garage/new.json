@@ -1,0 +1,16 @@
+[
+  {
+    "InvoiceNumber": "INV-001",
+    "Customer": "John Doe",
+    "Amount": 12000,
+    "Date": "2024-01-01"
+  },
+  {
+    "InvoiceNumber": "INV-002",
+    "Customer": "Jane Smith",
+    "Amount": 20000,
+    "Date": "2024-01-05"
+  }
+]
+
+// Stimulsoft Reports

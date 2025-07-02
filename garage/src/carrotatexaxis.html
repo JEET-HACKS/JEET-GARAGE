@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Dice Model (X-Axis Rotation)</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            perspective: 1000px;
+        }
+
+        .dice {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateDiceX 5s infinite linear; /* Rotation now only on X-axis */
+        }
+
+        .face {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #ccc;
+        }
+
+        /* Different sides of the dice */
+        .front  { transform: translateZ(150px); background-image: url('Car2.webp'); }
+        .back   { transform: rotateY(180deg) translateZ(150px); background-image: url('Car2.webp'); }
+        .left   { transform: rotateY(-90deg) translateZ(150px); background-image: url('Car2.webp'); }
+        .right  { transform: rotateY(90deg) translateZ(150px); background-image: url('Car2.webp'); }
+        .top    { transform: rotateX(90deg) translateZ(150px); background-image: url('Car2.webp'); }
+        .bottom { transform: rotateX(-90deg) translateZ(150px); background-image: url('Car2.webp'); }
+
+        /* Animation to rotate the dice on the X-axis */
+        @keyframes rotateDiceX {
+            0% {
+                transform: rotateX(0deg);
+            }
+            100% {
+                transform: rotateX(180deg); /* Rotate only on the X-axis */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="dice">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+    </div>
+</div>
+
+<script>
+    // Optional: Control the animation speed here if needed
+    const diceElement = document.querySelector('.dice');
+    diceElement.style.animationDuration = '5s'; // Adjust speed as necessary
+</script>
+
+</body>
+</html>

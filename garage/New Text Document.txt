@@ -1,0 +1,12 @@
+ var mechanic = await Mechanics.find();
+
+	   finalresult = invoicedetails.map(vehi=>{
+	   	             var mech=mechanic.find(mech=>mech._id.toString() === vehi.Mechanic_Name.toString())
+
+	   	             return{
+	   	             	...vehi.toObject(),
+                        mechdata:mech ? mech : null
+	   	             };
+	   })
+	    resp.send(finalresult);
+})
