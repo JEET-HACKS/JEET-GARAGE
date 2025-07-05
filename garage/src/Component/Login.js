@@ -14,7 +14,7 @@ export default function AuthCard({onLoginSuccess}) {
   {
   	 if(Password == ConfirmPassword)
 	  	 {
-	  	 	 axios.post('http://localhost:5000/SignUpDetails',{
+	  	 	 axios.post('https://garage-backend-8rs3.onrender.com/SignUpDetails',{
 	  	 	UserName,Password
 	  	 })
 	  	 .then((response)=>{
@@ -42,7 +42,7 @@ export default function AuthCard({onLoginSuccess}) {
         
        
 
-        axios.post('http://localhost:5000/login',{
+        axios.post('https://garage-backend-8rs3.onrender.com/login',{
             UserName,Password
         })
         .then((response)=>{
