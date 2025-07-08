@@ -9,7 +9,7 @@ const Master_Page=()=>{
 	                      {
 	                      	console.log(ChildData);
 	                      	
-	                      	axios.post('http://localhost:5000/AddMasters',ChildData)
+	                      	axios.post('https://garage-backend-8rs3.onrender.com/AddMasters',ChildData)
 	                      	.then((response)=>{
                                                alert('Master Added Successfully');
 	                      	})
