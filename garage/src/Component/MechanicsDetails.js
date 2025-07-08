@@ -23,7 +23,7 @@ const Mechanics=()=>{
 
 	 const navigate=useNavigate();
 	 function  GetMechanicsDetails(){
-	 	 axios.get('http://localhost:5000/getmechanicsdetails')
+	 	 axios.get('https://garage-backend-8rs3.onrender.com/getmechanicsdetails')
 	 	 .then((response)=>{
 	 	 	set_mechanic(response.data);
 	 	 	set_loadstopper(response.data);
@@ -44,7 +44,7 @@ const Mechanics=()=>{
 	 {
         
 
-           axios.delete(`http://localhost:5000/deletemechanicsdetails/${id}`)
+           axios.delete(`https://garage-backend-8rs3.onrender.com/deletemechanicsdetails/${id}`)
            .then((response)=>{
            	                  alert(response.data);
                               GetMechanicsDetails();

@@ -21,7 +21,7 @@ const Vehicle_Purchase_Ledger=()=>{
 
                                      function GetAccountName()
 	                                {
-                                             axios.get('http://localhost:5000/SupplierBind')
+                                             axios.get('https://garage-backend-8rs3.onrender.com/SupplierBind')
                                              .then((res)=>{
                                                            setAccountName(res.data);
                                              })
@@ -32,7 +32,7 @@ const Vehicle_Purchase_Ledger=()=>{
                                    var [PurchaseDetails,setPurchaseDetails]=React.useState([]);
                                    function BindGrid(id)
                                    {
-                                          axios.get(`http://localhost:5000/BindPurchaseLedger/${id}`)
+                                          axios.get(`https://garage-backend-8rs3.onrender.com/BindPurchaseLedger/${id}`)
                                           .then((res)=>{
                                                         setPurchaseDetails(res.data);
                                           })
@@ -50,7 +50,7 @@ const Vehicle_Purchase_Ledger=()=>{
 	                               function Delete_click(id)
 	                               {
                                         alert(id);
-                                        axios.delete(`http://localhost:5000/DeletePurchaseVoucher/${id}`)
+                                        axios.delete(`https://garage-backend-8rs3.onrender.com/DeletePurchaseVoucher/${id}`)
                                         .then((response)=>{
 
                                         })
@@ -61,8 +61,8 @@ const Vehicle_Purchase_Ledger=()=>{
 
 	                               function Edit_Click(id)
 	                               {
-                                        
-                                        Redirect(`/VehiclePurchase/${id}`);
+                                        alert("Work Under Process....")
+                                       // Redirect(`/VehiclePurchase/${id}`);
 	                               }
 	                               return(<div className="container-fluid">
 	                               	                    <header class="text-start">PURCHASE ACCOUNT LEDGER</header>
@@ -92,8 +92,8 @@ const Vehicle_Purchase_Ledger=()=>{
 	                                                                <th>Date</th>
 	                                                                <th>Invoice No.</th>
 	                                                                <th>Type</th>
-	                                                                <th>Debit Amount</th>
 	                                                                <th>Credit Amount</th>
+	                                                                <th>Debit Amount</th>
 	                                                                <th>Remaining Balance</th>
 	                                                                <th>Action</th>
 	                                                         </thead>

@@ -22,7 +22,7 @@ const VehicleFeatures=()=>{
 
                                function  LoadFeatures(){
                                	          
-                                            axios.get(`http://localhost:5000/GetFeatures/${id}`)
+                                            axios.get(`https://garage-backend-8rs3.onrender.com/GetFeatures/${id}`)
                                             .then((response)=>{
                                                                SetFeatures(response.data);
                                             })

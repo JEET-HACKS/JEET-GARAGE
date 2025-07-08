@@ -36,24 +36,24 @@ const Compo=()=>{
 	       <header class="text-start">SERVICES OF GARAGE</header>
   <div className="row">
     
-      <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-        <input type="button" onClick={Mechanicshandle}  className="btn btn-primary" value="MECHANICS DETAILS" />
+      <div className="col-xl-3 col-lg-6 col-md-6 mb-3">
+        <input type="button" onClick={Mechanicshandle}  className="btn btn-primary w-100 pt-5 pb-5 fs-4 fw-bold" value="MECHANICS DETAILS" />
       </div>
 
-      <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-        <input type="button" onClick={VechicleHandle} className="btn btn-danger" value="VEHICLES ENTRY" />
+      <div className="col-xl-3 col-lg-6 col-md-6 mb-3">
+        <input type="button" onClick={VechicleHandle} className="btn btn-danger w-100 pt-5 pb-5 fs-4 fw-bold" value="VEHICLES ENTRY" />
       </div>
  
-      <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-        <input type="button" onClick={ServicesHandle} className="btn btn-success" value="RECOVER VEHICLES" />
+      <div className="col-xl-3 col-lg-6 col-md-6 mb-3">
+        <input type="button" onClick={ServicesHandle} className="btn btn-success w-100 pt-5 pb-5 fs-4 fw-bold" value="RECOVER VEHICLES" />
       </div>
 
-      <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-        <input type="button" onClick={AppointmentHandle} className="btn btn-secondary" value="VEHICLE INVOICE" />
+      <div className="col-xl-3 col-lg-6 col-md-6 mb-3">
+        <input type="button" onClick={AppointmentHandle} className="btn btn-secondary w-100 pt-5 pb-5 fs-4 fw-bold" value="VEHICLE INVOICE" />
       </div>
       
-      <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-3">
-        <input type="button" className="btn btn-info" value="ATTENDENCE PUNCH" onClick={Attendence_Click} />
+      <div className="col-xl-3 col-lg-6 col-md-6 mb-3">
+        <input type="button" className="btn btn-info w-100 pt-5 pb-5 fs-4 fw-bold" value="ATTENDENCE PUNCH" onClick={Attendence_Click} />
       </div>
   </div>
 </div>

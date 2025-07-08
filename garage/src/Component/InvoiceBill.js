@@ -48,7 +48,7 @@ const InvoiceBill=()=>{
 
 	               function InvoiceN()
 	               {
-	               	axios.get('http://localhost:5000/InvoiceN')
+	               	axios.get('https://garage-backend-8rs3.onrender.com/InvoiceN')
                       .then((response)=>{
                                         setInvoice("INVN"+response.data);
                       })
@@ -60,7 +60,7 @@ const InvoiceBill=()=>{
 
 	               function GetServiceType(){
 	               	
-	               	axios.get('http://localhost:5000/getServices')
+	               	axios.get('https://garage-backend-8rs3.onrender.com/getServices')
                       .then((response)=>{
                                         setbind(response.data);
                       })
@@ -71,7 +71,7 @@ const InvoiceBill=()=>{
 
 	               function GetMechanic()
 	               {
-	                  axios.get('http://localhost:5000/bindmechanicsdetails')
+	                  axios.get('https://garage-backend-8rs3.onrender.com/bindmechanicsdetails')
                       .then((response)=>{
                  
                                         setMechanic(response.data);
@@ -87,7 +87,7 @@ const InvoiceBill=()=>{
 
 	               function GetInvoiceDetails(id){
 	               	        
-	               	        axios.get(`http://localhost:5000/GetVehicleClearDetails/${id}`)
+	               	        axios.get(`https://garage-backend-8rs3.onrender.com/GetVehicleClearDetails/${id}`)
 	               	        .then((response)=>{  
                                                var data=response.data[0];
                                                setEntry_date(data.Entry_date);
@@ -147,7 +147,7 @@ const InvoiceBill=()=>{
 	               function Save_click()
 	               {
 	               	     var status=localStorage.getItem("status");
-                       axios.post(`http://localhost:5000/AddInvoiceDetails/${id}/${status}`,{
+                       axios.post(`https://garage-backend-8rs3.onrender.com/AddInvoiceDetails/${id}/${status}`,{
                        	  Entry_date,
                        	  CustomerName,
                        	  Cust_MobileNo,
@@ -184,21 +184,21 @@ const InvoiceBill=()=>{
 
                             <div className="container-fluid">
 	                  	          <div className="row">
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Vehicle Entry Date</label>
 	                  	                      <input type="Date" value={Entry_date} onChange={(e)=>setEntry_date(e.target.value)} className="form-control"/>
 	                  	                </div>
 
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Invoice Date</label>
 	                  	                      <input type="Date" value={InvoiceDate}  onChange={(e)=>setInvoiceDate(e.target.value)} className="form-control"/>
 	                  	                </div>
                                         
-                                        <div className="col-md-3">
+                                        <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Invoice No.</label>
 	                  	                      <input type="text" value={InvoiceNo} onChange={(e)=>setInvoice(e.target.value)} className="form-control"/>
 	                  	                </div>
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Customer Name</label>
 	                  	                      <input type="text" value={CustomerName} onChange={(e)=>{var value=e.target.value.replace(/[^a-zA-Z   ]/g, ''); e.target.value=value; setCustomerName(e.target.value)}} className="form-control"/>
 	                  	                </div>
@@ -208,22 +208,22 @@ const InvoiceBill=()=>{
 
 	                  	          <div className="row">
 
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Mobile No</label>
 	                  	                      <input type="text" value={Cust_MobileNo} onChange={handleMobileChange} className="form-control"/>
 	                  	                </div>
 
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Vehicle No</label>
 	                  	                      <input type="text" value={VehicleNo} onChange={(e)=>setVehicleNo(e.target.value)} className="form-control"/>
 	                  	                </div>
 
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Vehicle Company</label>
 	                  	                      <input type="text" value={VehicleCmpy} onChange={(e)=>setVVehicleCmpy(e.target.value)} className="form-control"/>
 	                  	                </div>
 
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Mechanic Name</label>
 	                  	                       <select className="form-control" value={Mechanic_Name} onChange={(e)=>setMechanic_Name(e.target.value)}> 
 	                 	                           <option>Select Mechanic</option>
@@ -245,7 +245,7 @@ const InvoiceBill=()=>{
 	                  	                
 	                  	          </div>
 	                  	          <div className="row">
-	                  	                 <div className="col-md-3">
+	                  	                 <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                    <label>Service Type</label>
 	                  	                    <select className="form-control" value={Service_Type} onChange={(e)=>setService_Type(e.target.value)}>
 	                  	                    <option>Select Service Type</option>
@@ -262,17 +262,17 @@ const InvoiceBill=()=>{
                                             
 	                  	                </div>
 
-	                  	                 <div className="col-md-3">
+	                  	                 <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Service Cost</label>
 	                  	                      <input type="text" value={ServiceCost}  onChange={(e)=>{var value=e.target.value.replace(/[^0-9]/g, ''); e.target.value=value; setServiceCost(e.target.value)}}  className="form-control"/>
 	                  	                </div>
 
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Address</label>
 	                  	                      <input type="text" value={Cust_Address} onChange={(e)=>setCust_Address(e.target.value)} className="form-control"/>
 	                  	                </div>
 
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>VehicleType</label>
 	                  	                      <input type="text" value={VehicleType} onChange={(e)=>setVehicleType(e.target.value)} className="form-control"/>
 	                  	                </div>
@@ -284,19 +284,19 @@ const InvoiceBill=()=>{
 
 	                  	          <div className="row">
 
-	                  	                <div className="col-md-3">
+	                  	                <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Vehicle Color</label>
 	                  	                      <input type="text" value={Vehicle_Color}  onChange={(e)=>{var value=e.target.value.replace(/[^a-zA-z    ]/g, ''); e.target.value=value; setVehicle_Color(e.target.value)}} className="form-control"/>
 	                  	                </div>
 	                  	                
-	                  	               <div className="col-md-3">
+	                  	               <div className="col-xl-3 col-lg-6 col-md-6">
 	                  	                      <label>Net Amount</label>
 	                  	                      <input type="number" value={NetAmt}  onChange={(e)=>{var value=e.target.value.replace(/[^0-9]/g, ''); e.target.value=value; setNetAmt(e.target.value)}} className="form-control"/>
 	                  	                </div>
 	                  	          </div>
 
-	                  	          <div className="row">
-	                  	               <div className="col-md-12 d-flex justify-content-end mt-2">       
+	                  	          <div className="row mt-2">
+	                  	               <div className="offset-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-end ">       
 	                  	                 	                	                            	                 
 	                  	                     <input type="button" value="Save" onClick={Save_click} className="btn btn-success add"/> 
 	                  	                    <input type="button" value="Exit" onClick={Exit_click} className="btn btn-danger add mx-2"/>

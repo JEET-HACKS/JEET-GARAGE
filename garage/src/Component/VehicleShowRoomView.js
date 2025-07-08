@@ -8,7 +8,7 @@ const VehicleShowRoomDetails=()=>{
 	                  },[])
 
 	                  function GetShowRoomDetails(){
-                        axios.get('http://localhost:5000/VehicleShowRoomDetails')
+                        axios.get('https://garage-backend-8rs3.onrender.com/VehicleShowRoomDetails')
                         .then((response)=>{
                         	        alert(response.data);
                         	        setClearvehicle(response.data);

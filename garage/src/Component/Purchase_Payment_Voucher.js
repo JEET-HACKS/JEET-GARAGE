@@ -31,7 +31,7 @@ const Purchase_Payment_Voucher=()=>{
                                                          
 	                                function GetAccountName()
 	                                {
-                                     axios.get('http://localhost:5000/SupplierBind')
+                                     axios.get('https://garage-backend-8rs3.onrender.com/SupplierBind')
                                      .then((res)=>{
                                              setAccountName(res.data);
                                       })
@@ -50,7 +50,7 @@ const Purchase_Payment_Voucher=()=>{
                                           	                           }
                                           });
                                           setPayment(updaterows);
-                                          axios.get(`http://localhost:5000/InvoiceBind/${account}`)
+                                          axios.get(`https://garage-backend-8rs3.onrender.com/InvoiceBind/${account}`)
                                           .then((res)=>{
                                                         setAccountDetails(res.data); 
                                                         document.getElementsByName('Pending_Amt')[0].value=res.data[2].Total;
@@ -69,10 +69,15 @@ const Purchase_Payment_Voucher=()=>{
                                                   var divide2=amt.split('|')[1];
                                                   var invnamt=divide.split(':')[1];
                                                   var invnamt2=divide2.split(':')[1];
-                                                  alert(invnamt2);
+                                                 
                                                   var adjamt=document.getElementsByName('DebitAmt')[0].value;
                                                   var adjustment=Number(invnamt2)-Number(adjamt); 
-                                                  alert(adjustment);       
+                                                  alert(adjustment); 
+                                                  if(adjustment <= 0)
+                                                  {
+                                                  	 invnamt2=0;
+
+                                                  }      
                                                   var Remaining=localStorage.getItem("total");
                                                   document.getElementsByName('Pending_Amt')[0].value=Number(Remaining)-Number(adjamt);
                                                   updaterows = Payment.map(row=>{
@@ -105,19 +110,19 @@ const Purchase_Payment_Voucher=()=>{
 	                                function Save_Click()
 	                                {
 	                                	var newdata = Object.values(childPayment);
-	                                	console.log(newdata);
+	                                	
 	                                	var update=Payment.map(row=>{
 	                                		                           return{
 	                                		                           	   ...row,
 	                                		                           	   SupplierInvnDate:newdata[1] ?? '',
 	                                		                           	   DebitAmt:newdata[3] ?? '',
-	                                		                           	   PurchaseAmt:'',
+	                                		                           	   PurchaseAmt:'0',
 	                                		                           	   Type:'Payment',
 	                                		                           	   Payment_Type:'cash'
 	                                		                           }
 	                                	})
 	                               
-	                                	axios.post('http://localhost:5000/SavePayment',update)
+	                                	axios.post('https://garage-backend-8rs3.onrender.com/SavePayment',update)
 	                                	.then((res)=>{
 	                                		              if(res.data == "ok")
 	                                		              {
@@ -144,18 +149,19 @@ const Purchase_Payment_Voucher=()=>{
 	                                	   <div className="container-fluid text-left">
 	                                            <header class="text-start">PURCHASE PAYMENT VOUCHER</header>
 
+	                                        <div className="container-fluid">
 	                                            <div className="row">
-	                                                  <div className="col-md-3">
+	                                                  <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                        <label>Voucher Date</label>
 	                   	                                    <input type="date" name="SupplierInvnDate" onChange={selectionChanged} className="form-control"/>
 	                                                  </div>
 
-	                                                  <div className="col-md-3">
+	                                                  <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                        <label>Voucher No.</label>
 	                   	                                    <input type="text" name="SupplierInvn" onChange={selectionChanged} className="form-control"/>
 	                                                  </div>
 
-	                                                  <div className="col-md-3">
+	                                                  <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                        <label>Account Name</label>
 	                   	                                    <select className="form-control" name="SupplierName" onChange={AccountChanged}>
 	                   	                                            <option>Select Account Name</option>
@@ -169,7 +175,7 @@ const Purchase_Payment_Voucher=()=>{
 	                   	                                    </select>
 	                                                  </div>
 
-	                                                  <div className="col-md-3">
+	                                                  <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                       <label>Amount</label>
 	                                                       <input type="Number" className="form-control" onChange={selectionChanged} name="DebitAmt"/>
 	                                                 </div>
@@ -178,7 +184,7 @@ const Purchase_Payment_Voucher=()=>{
 
 	                                            <div className="row">
 
-	                                                  <div className="col-md-3">
+	                                                  <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                        <label>Adjust Invoice Amount</label>
 	                   	                                    <select className="form-control" onChange={AdjustInvoiceChanged}>
                                                                     <option>Select Invoice</option>
@@ -191,7 +197,7 @@ const Purchase_Payment_Voucher=()=>{
 	                   	                                    </select>
 	                                                  </div>
 	                                                 
-	                                                 <div className="col-md-3">
+	                                                 <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                       <label>Payment Type</label>
 	                                                       <select className="form-control"  onChange={selectionChanged}>
                                                                    <option>Select Payment Type</option>
@@ -201,12 +207,12 @@ const Purchase_Payment_Voucher=()=>{
 	                                                       </select>
 	                                                 </div>
 
-	                                                 <div className="col-md-3">
+	                                                 <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                       <label>Cheque No</label>
 	                                                       <input type="text" name="Cheque_No" onChange={selectionChanged} className="form-control" disabled/>
 	                                                 </div>
 
-	                                                 <div className="col-md-3">
+	                                                 <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                       <label>Bank Name</label>
 	                                                       <input type="text" onChange={selectionChanged} className="form-control"/>
 	                                                 </div>         
@@ -214,7 +220,7 @@ const Purchase_Payment_Voucher=()=>{
 	                                            </div>  
 
 	                                            <div className="row">
-	                                                   <div className="col-md-3">
+	                                                   <div className="col-xl-3 col-lg-6 col-md-6">
 	                                                       <label>Remaining Amount</label>
 	                                                     
 	                                                       	 	   <input type="Number" name="Pending_Amt"  onChange={selectionChanged} className="form-control" disabled/>
@@ -226,12 +232,13 @@ const Purchase_Payment_Voucher=()=>{
 	                                                 </div>
 	                                            </div>
 
-	                                             <div className="row mt-5">                  
-				                   	                    <div className="offset-6 col-md-6 text-end">
+	                                             <div className="row mt-2">                  
+				                   	                    <div className="offset-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-end ">
 				                   	                         <input type="button" className="btn btn-success add" onClick={Save_Click} value="Save"/>
 				                   	                         <input type="button" className="btn btn-danger add mx-2" value="Exit" onClick={Exit_Click}/>
 				                   	                    </div>             
 	                   	                         </div>  
+	                   	                     </div>    
 	                                       </div>
 	                                	   )
 	                                

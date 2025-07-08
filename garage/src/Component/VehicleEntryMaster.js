@@ -44,7 +44,7 @@ const AddVehicle=()=>{
 	},[])
 
 	function GetServices() {
-		axios.get('http://localhost:5000/getServices')
+		axios.get('https://garage-backend-8rs3.onrender.com/getServices')
 		.then((response)=>{
                                setService(response.data);
 		})
@@ -56,7 +56,7 @@ const AddVehicle=()=>{
 
 	function GetUpdatedDetails(id)
 	{
-		axios.get(`http://localhost:5000/getUpdatedDetails/${id}`)
+		axios.get(`https://garage-backend-8rs3.onrender.com/getUpdatedDetails/${id}`)
 		.then((response)=>{
                               alert(response.data.Entry_date);
                               setEntry_date(response.data.Entry_date);
@@ -83,7 +83,7 @@ const AddVehicle=()=>{
 
 	function GetMechanic()
 	{
-           axios.get('http://localhost:5000/bindmechanicsdetails')
+           axios.get('https://garage-backend-8rs3.onrender.com/bindmechanicsdetails')
            .then((response)=>{
                  
                  setMechanic(response.data);
@@ -109,8 +109,8 @@ const AddVehicle=()=>{
 
         function Update_Click()
         {
-        	alert(id);
-        	axios.put(`http://localhost:5000/UpdateVehicleEntry/${id}`,{
+        
+        	axios.put(`https://garage-backend-8rs3.onrender.com/UpdateVehicleEntry/${id}`,{
         		Entry_date,
 			CustomerName,
 			Cust_MobileNo,
@@ -129,7 +129,7 @@ const AddVehicle=()=>{
         		             // Inside Save_Click or Update_Click
 					if (response.data === "ok") {
 					  alert("Vehicle Saved/Updated Successfully");
-					  setTimeout(() => navigate('/VehicleDetail'), 100); // ✅ add delay
+					  //setTimeout(() => navigate('/VehicleDetail'), 100); // ✅ add delay
 					}
 					else{
 						alert(response.data); 	
@@ -153,7 +153,7 @@ const AddVehicle=()=>{
 		  setEntry_date((Entry_date).toString());
 		   setVehicleClearDate((VehicleClearDate).toString());
 		   
-		axios.post('http://localhost:5000/addVehicleDetails',{
+		axios.post('https://garage-backend-8rs3.onrender.com/addVehicleDetails',{
 			Entry_date,
 			CustomerName,
 			Cust_MobileNo,
@@ -188,14 +188,14 @@ const AddVehicle=()=>{
 	                 	      <header class="text-start">VEHICLE ENTRY MASTER</header>
 
 	                 	     <div className="row">
-	                 	           <div className="col-md-3 text-left">
+	                 	           <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Entry Date</label>
 	                 	               <input type="date" className="form-control" value={Entry_date} onChange={(e)=>{            
 	                 	               setEntry_date(e.target.value)
 	                 	           }}/> 
 	                 	          </div>
 
-	                 	          <div className="col-md-3 text-left">
+	                 	          <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	               <label>Customer Name</label>
 	                 	               <input type="text" className="form-control" value={CustomerName} onChange={(e)=>{
 	                 	                var value=e.target.value.replace(/[^a-zA-Z   ]/g, '');
@@ -204,13 +204,13 @@ const AddVehicle=()=>{
 	                 	                }/>             
 	                 	               
 	                 	          </div>
-	                 	          <div className="col-md-3 text-left">
+	                 	          <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Mobile No</label>
 	                 	               <input type="text" id="mob" value={Cust_MobileNo} className="form-control" maxlength="10"  onChange={handleMobileChange}/> 
                                         
 	                 	               
 	                 	          </div>
-	                 	          <div className="col-md-3 text-left">
+	                 	          <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Address</label>
 	                 	               <input type="text" className="form-control" value={Cust_Address} onChange={(e)=>setCust_Address(e.target.value)}/> 
 	                 	          </div>
@@ -218,17 +218,17 @@ const AddVehicle=()=>{
 	                 	         
 	                 	     </div>
 	                 	     <div className="row">
-	                 	            <div className="col-md-3 text-left">
+	                 	            <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Vehicle No</label>
 	                 	               <input type="text" className="form-control" value={VehicleNo} onChange={(e)=>setVehicleNo(e.target.value)}/> 
 	                 	          </div>
 
-	                 	           <div className="col-md-3 text-left">
+	                 	           <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Vehicle Company</label>
 	                 	               <input type="text" className="form-control" value={VehicleCmpy} onChange={(e)=>setVVehicleCmpy(e.target.value)}/> 
 	                 	          </div>
 
-	                 	           <div className="col-md-3 text-left">
+	                 	           <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Vehicle Type</label>
 	                 	                <select className="form-control" value={VehicleType} onChange={(e)=>setVehicleType(e.target.value)}>
 	                 	                         <option>Select Vehicle Type</option>
@@ -237,14 +237,14 @@ const AddVehicle=()=>{
 	                 	                         <option>Truck</option>
 	                 	                </select> 
 	                 	          </div>
-	                 	          <div className="col-md-3 text-left">
+	                 	          <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                  <label>Color</label>
 	                 	                  <input type="text" className="form-control" value={Vehicle_Color} onChange={(e)=>{var value=e.target.value.replace(/[^a-zA-z    ]/g, ''); e.target.value=value; setVehicle_Color(e.target.value)}}/>  
 	                 	          </div>
 	                 	     </div>
 	                 	     
 	                 	     <div className="row">
-	                 	           <div className="col-md-3 text-left">
+	                 	           <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Mechanic Name</label>
 	                 	                <select className="form-control" value={Mechanic_Name} onChange={(e)=>setMechanic_Name(e.target.value)}> 
 	                 	                    <option>Select Mechanic</option>
@@ -262,7 +262,7 @@ const AddVehicle=()=>{
 	                 	                </select>
 	                 	                
 	                 	           </div>
-	                 	           <div className="col-md-3 text-left">
+	                 	           <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Service Type</label>
 	                 	                <select className="form-control" value={Service_Type} onChange={(e)=>setService_Type(e.target.value)}> 
 	                 	                        <option>Select Service</option>
@@ -279,12 +279,12 @@ const AddVehicle=()=>{
 	                 	                        }          
 	                 	                </select>
 	                 	           </div> 
-	                 	           <div className="col-md-3 text-left">
+	                 	           <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Vehicle Clear Date</label>
 	                 	                <input type="date" className="form-control" value={VehicleClearDate} onChange={(e)=>setVehicleClearDate(e.target.value)}/>
 	                 	           </div>
 
-	                 	           <div className="col-md-3 text-left">
+	                 	           <div className="col-xl-3 col-lg-6 col-md-6 text-left">
 	                 	                <label>Vehicle Status</label>
 	                 	                <select className="form-control" value={VehicleStatus} onChange={(e)=>setVehicleStatus(e.target.value)}>
 	                 	                        <option>Select Vehicle Status</option>
@@ -294,8 +294,8 @@ const AddVehicle=()=>{
 	                 	           </div>
 	                 	    </div>
 	                 	    
-	                 	     <div className="row d-flex justify-content-end mt-3">
-	                 	          <div className="col-md-3">
+	                 	     <div className="row  mt-3">
+	                 	          <div className="offset-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-end ">
 	                 	              {
 	                 	               id!="add"
 	                 	               ?

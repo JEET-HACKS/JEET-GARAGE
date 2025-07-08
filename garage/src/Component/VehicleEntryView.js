@@ -14,7 +14,7 @@ const VehicleEntryDetail=()=>{
                          
           },[]);
      function GetVehicleEntryDetails(){
-              axios.get('http://localhost:5000/getVehicleDetails')
+              axios.get('https://garage-backend-8rs3.onrender.com/getVehicleDetails')
               .then((response)=>{
                                 
                                 setVehicleDetails(response.data);
@@ -36,7 +36,7 @@ const VehicleEntryDetail=()=>{
         if(status == "Ok")
         {
         
-            axios.get(`http://localhost:5000/ClearVehicleFromService/${id}`)
+            axios.get(`https://garage-backend-8rs3.onrender.com/ClearVehicleFromService/${id}`)
             .then((response)=>{
                                alert(response.data);
                                axios.post('http://localhost:5000/addClearVehicleFromService',response.data)     
@@ -63,8 +63,7 @@ const VehicleEntryDetail=()=>{
         else{
             alert('Vehicle Status is Not Ok');
         }
-        // alert(status);
-        // alert(id);
+      
      }
 	const AddVehicle_click=()=>{
 		
@@ -72,9 +71,9 @@ const VehicleEntryDetail=()=>{
 	}
 
      function delete_click(id){
-          alert(id);
+          
 
-          axios.delete(`http://localhost:5000/deleteVehicleDetails/${id}`)
+          axios.delete(`https://garage-backend-8rs3.onrender.com/deleteVehicleDetails/${id}`)
           .then((response)=>{
                        alert(response.data);
                        GetVehicleEntryDetails();

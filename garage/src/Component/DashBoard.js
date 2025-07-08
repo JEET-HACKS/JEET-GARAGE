@@ -20,13 +20,14 @@ const DashBoard=()=>{
                       var [ServiceInvoiceAmt,SetServiceInvnAmt]=React.useState([]);
                       var [TotalVehicle,SetTotalVehicle]=React.useState([]);
                       var [TotalInvoice,SetTotalInvoice]=React.useState([]);
+                      
                    useEffect(()=>{
                                    DashBoardDetails();
                    },[])
 
                    function DashBoardDetails()
                    {
-                        axios.get('http://localhost:5000/GetSomeDetails')
+                        axios.get('https://garage-backend-8rs3.onrender.com/GetSomeDetails')
                         .then((response)=>{
                                          
                                          var data1=response.data[0];
@@ -141,7 +142,7 @@ const DashBoard=()=>{
                                        <div class="card text-left text-light" style={{'background':'linear-gradient(to right,#e1950a,#f3cd29)','height':'150px'}}>              
                                           <div class=" row card-body" >
                                                <div className="col-lg-9 col-md-10 col-sm-6 col-6"  style={{'padding':'0 0 0 12px'}}>
-                                                    <h5 class="card-title">Customers Reviews</h5>          
+                                                    <h5 class="card-title">Vehicles For Service</h5>          
                                                     <span className="fw-bold fs-4 pt-0">277</span>
                                                </div>
                                                <div className="col-lg-3 col-md-2 col-sm-6 col-6 text-end">

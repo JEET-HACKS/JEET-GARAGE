@@ -33,7 +33,7 @@ const Account_master_for_showroom=()=>{
 
 	                                  function EditAccountMasterDetails()
 	                                  {
-	                                  	   axios.get(`http://localhost:5000/EditAccountFromMaster/${id}`)
+	                                  	   axios.get(`https://garage-backend-8rs3.onrender.com/EditAccountFromMaster/${id}`)
                                           .then((response)=>{
                                                        var val=response.data[0];
 
@@ -71,7 +71,7 @@ const Account_master_for_showroom=()=>{
                                                              update[id]=InputElement.value
                                             })
 
-                                            axios.post(`http://localhost:5000/AddNewAccountInShowRoom/${id}`,update)
+                                            axios.post(`https://garage-backend-8rs3.onrender.com/AddNewAccountInShowRoom/${id}`,update)
 	                                  	    .then((response)=>{
 	                                                          alert('Account Update Successfully');
 	                                                           //Redirect('/AccountMasterView');
@@ -81,7 +81,7 @@ const Account_master_for_showroom=()=>{
 		                                  	})
 	                                  	}
 	                                  	else{
-	                                  		axios.post(`http://localhost:5000/AddNewAccountInShowRoom/${id}`,Form)
+	                                  		axios.post(`https://garage-backend-8rs3.onrender.com/AddNewAccountInShowRoom/${id}`,Form)
 	                                  	.then((response)=>{
 	                                  		               alert(response.data);
                                                           //alert('Account Saved Successfully');
@@ -143,19 +143,19 @@ const Account_master_for_showroom=()=>{
 
 	                   	           <div className="container-fluid">
 	                   	                <div className="row">
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label> Date</label>
 	                   	                         <input type="date" name="AcDate" onChange={handleChange} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Account Name</label>
 	                   	                         <input type="text" name="Account_Name" onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Opening Balance</label>
 	                   	                         <input type="text" name="Opening_Balance" onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>DR/CR</label>
 	                   	                         <select name="ScheduleType" onChange={handleChange} className="form-control">
 	                   	                                 <option>Select Schedule Type</option>
@@ -166,19 +166,19 @@ const Account_master_for_showroom=()=>{
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Address</label>
 	                   	                         <input type="text" name="Address" onChange={handleChange} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>State</label>
 	                   	                         <input type="text" name="State" onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>City</label>
 	                   	                         <input type="text" name="City" onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Email</label>
 	                   	                         <input type="email" name="Email" onChange={handleChange} className="form-control"/>
 	                   	                    </div>
@@ -186,37 +186,37 @@ const Account_master_for_showroom=()=>{
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Mobile No</label>
 	                   	                         <input type="text" name="AcMobileNo" onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Pan No</label>
 	                   	                         <input type="text" name="PanNo" onChange={handleChange} className="form-control"/>
 
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Aadhar No</label>
 	                   	                         <input type="text" name="AdharNo" maxlength="12" minlength="12" onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>GSTIN</label>
 	                   	                         <input type="text" name="GSTIN" onChange={handleChange} className="form-control"/>
 	                   	                    </div>
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Account No</label>
 	                   	                         <input type="text" name="AccountNo" onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>IFSC</label>
 	                   	                         <input type="text" name="IFSC" onChange={handleChange} className="form-control"/>
 	                   	                    </div>
 
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Account Type</label>
 	                   	                         <select name="AccountType" onChange={handleChange} className="form-control">
 	                   	                                 <option>Select Account Type</option>
@@ -224,7 +224,7 @@ const Account_master_for_showroom=()=>{
 	                   	                                 <option>CUST</option>
 	                   	                         </select>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Bank Name</label>
 	                   	                         <input type="text" name="BankName" onChange={handleChange} className="form-control"/>
 	                   	                    </div>
@@ -232,7 +232,7 @@ const Account_master_for_showroom=()=>{
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                      <div className="col-md-3">
+	                   	                      <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Credit Limit</label>
 	                   	                         <input type="text" name="CreditLimit" onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
@@ -241,7 +241,7 @@ const Account_master_for_showroom=()=>{
 
 
 	                   	                <div className="row mt-2">                  
-	                   	                    <div className="offset-6 col-md-6 col-sm-12 text-end">
+	                   	                    <div className="offset-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-end ">
 	                   	                         <input type="button" className="btn btn-success add" onClick={Save_click} value="Save"/>
 	                   	                         <input type="button" className="btn btn-danger add mx-2" value="Exit" onClick={Exit_Click}/>
 

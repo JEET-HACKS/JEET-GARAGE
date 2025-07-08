@@ -33,7 +33,7 @@ const Sidebar=({isOpen,mode})=>{
 
 	               function BindSidebar()
 	               {
-                        axios.get(`http://localhost:5000/BindSidebar/${mode}`)
+                        axios.get(`https://garage-backend-8rs3.onrender.com/BindSidebar/${mode}`)
                         .then((response)=>{
                                           SetMenus(response.data); 
                         })

@@ -12,7 +12,7 @@ const AccountMasterView=()=>{
 
 	                          function GetAccountDetails()
 	                          {
-	                          	axios.get('http://localhost:5000/GetAccountDetailsInShowRoom')
+	                          	axios.get('https://garage-backend-8rs3.onrender.com/GetAccountDetailsInShowRoom')
 	                          	.then((response)=>{
                                                   setInvoiceDetails(response.data);
 	                          	})
@@ -29,7 +29,7 @@ const AccountMasterView=()=>{
                               function Delete_Click(id)
                               {
                                 
-                                    axios.delete(`http://localhost:5000/DeleteAccountFromMaster/${id}`)
+                                    axios.delete(`https://garage-backend-8rs3.onrender.com/DeleteAccountFromMaster/${id}`)
                                     .then((response)=>{
                                                        GetAccountDetails();
                                     })

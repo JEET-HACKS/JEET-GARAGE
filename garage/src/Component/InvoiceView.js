@@ -24,7 +24,7 @@ const InvoiceView=()=>{
                      {
                         alert(id);
 
-                        axios.delete(`http://localhost:5000/DeleteInvoiceDetails/${id}`)
+                        axios.delete(`https://garage-backend-8rs3.onrender.com/DeleteInvoiceDetails/${id}`)
                         .then((response)=>{
                                           
                                            GetInvoiceDetails();
@@ -37,7 +37,7 @@ const InvoiceView=()=>{
 
                      function GetInvoiceDetails()
                      {
-                          axios.get('http://localhost:5000/GetInvoiceDetails')
+                          axios.get('https://garage-backend-8rs3.onrender.com/GetInvoiceDetails')
                           .then((response)=>{
                           	                 setInvoiceDetails(response.data);
                                              
@@ -53,7 +53,7 @@ const InvoiceView=()=>{
                      {
                         alert(id);
                         // Redirect("/ServiceBill/"+id)
-                        axios.get(`http://localhost:5000/bindInvoicePrint/${id}`)
+                        axios.get(`https://garage-backend-8rs3.onrender.com/bindInvoicePrint/${id}`)
                      .then((response)=>{ 
                                         setCustName(response.data);
                                         var arrayid=response.data[0];

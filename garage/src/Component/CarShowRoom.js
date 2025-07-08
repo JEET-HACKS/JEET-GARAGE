@@ -12,7 +12,7 @@ const CarShowRoom=()=>{
 
 	                      function Loadvehicles()
 	                      {
-                                 axios.get('http://localhost:5000/GetVehicles')
+                                 axios.get('https://garage-backend-8rs3.onrender.com/GetVehicles')
                                  .then((response)=>{
                                                     SetVehicle(response.data);
                                  })

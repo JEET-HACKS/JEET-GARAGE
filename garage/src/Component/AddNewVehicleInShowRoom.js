@@ -1,7 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
+
 
 const AddNewVehicleShowRoom=()=>{
+	                             var Redirect=useNavigate();
 	                             var textBoxesIds=["VehicleBrandName",
 	                             	               "ModelName",
 	                             	               "Variant",
@@ -39,15 +42,6 @@ const AddNewVehicleShowRoom=()=>{
 
                                                     document.getElementsByName('SalesPrice')[0].value=Salesprice || 0;
 
-                                                   
-
-                                                    
-                                                    // setFormData(prev => ({
-                                                    //                ...prev,
-                                                    //                [name]: name == 'VehicleImport' 
-                                                    //                 ? document.getElementsByName('VehicleImport')[0].value.split('\\').pop()
-                                                    //                : value
-                                                    //                }));
                                                     setFormData(prev => ({
 																	  ...prev,
 																	  [name]: 
@@ -63,12 +57,13 @@ const AddNewVehicleShowRoom=()=>{
 	                             }
 	                             function Save_click(){
 	                             	 console.log(Form);
-	                             	axios.post('http://localhost:5000/AddNewVehicleShowRoom',Form)
+	                             	axios.post('https://garage-backend-8rs3.onrender.com/AddNewVehicleShowRoom',Form)
 	                             	.then((response)=>{
 	                             		
 	                             		               if(response.data == "ok")
 	                             		               {
                                                             alert('Vehicle Added Successfully');
+                                                            Redirect('/CarShowRoom');
 	                             		               }
 	                             		               else{
 	                             		               	   alert(response.data);
@@ -123,32 +118,32 @@ const AddNewVehicleShowRoom=()=>{
 
 	                         	          <div className="container-fluid">
 	                         	               <div className="row">
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Vehicle Brand Name</label>
 	                         	                         <input type="text" name="VehicleBrandName" className="form-control" onChange={handleChange} />
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Model Name</label>
 	                         	                         <input type="text" name="ModelName" className="form-control" onKeyPress={handleKeyPress}  onChange={handleChange}/>
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Variant</label>
 	                         	                         <input type="text" name="Variant" className="form-control" onKeyPress={handleKeyPress}  onChange={handleChange}/>
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Mfy Year</label>
 	                         	                         <input type="text" name="MfyYear" className="form-control"  onKeyPress={handleKeyPress} onChange={handleChange}/>
 	                         	                    </div>
 	                         	               </div>
 
 	                         	               <div className="row">
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Vehicle Type</label>
 	                         	                        
 	                         	                         <select name="VehicleType" className="form-control"  onChange={handleChange}>
@@ -160,7 +155,7 @@ const AddNewVehicleShowRoom=()=>{
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Fuel Type</label>
 	                         	                         
 	                         	                         <select name="FuelType"  onChange={handleChange} className="form-control">
@@ -173,7 +168,7 @@ const AddNewVehicleShowRoom=()=>{
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Transmission Type</label>
 	                         	                          <select name="TransmissionType"  onChange={handleChange} className="form-control">
 	                         	                                 <option>Select Transmission Type</option>
@@ -184,20 +179,20 @@ const AddNewVehicleShowRoom=()=>{
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Engine Capacity</label>
 	                         	                         <input name="EngineCapacity" type="text"  onChange={handleChange} className="form-control"/>
 	                         	                    </div>
 	                         	               </div>
 
 	                         	               <div className="row">
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Mileage</label>
 	                         	                         <input name="Mileage" type="text"  onChange={handleChange} className="form-control"/>
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Seating Capacity</label>
 	                         	                         
 	                         	                         <select name="SeatingCapacity"  onChange={handleChange} className="form-control">
@@ -210,36 +205,36 @@ const AddNewVehicleShowRoom=()=>{
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Ex-ShowRoom Price</label>
 	                         	                          <input type="text" name="ExShowRoomPrice"  onChange={handleChange} onKeyPress={handleKeyPress}  className="form-control"/>
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>On-Road Price</label>
 	                         	                         <input type="text" name="OnRoadPrice"  onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                         	                    </div>
 	                         	               </div>
 
 	                         	               <div className="row">
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Sales Price</label>
 	                         	                         <input type="text" name="SalesPrice"  onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                         	                    </div>
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Vehicle Color</label>
 	                         	                         <input type="text" name="VehicleColor"  onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Vin No</label>
 	                         	                         <input type="text" name="VinNo"  onChange={handleChange} className="form-control"/>
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Insurance</label>
 	                         	                          <input type="text" name="Insurance"  onChange={handleChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                         	                    </div>
@@ -249,7 +244,7 @@ const AddNewVehicleShowRoom=()=>{
 	                         	               </div>
 
 	                         	               <div className="row">
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Air Bags</label>
 	                         	                         
 	                         	                         <select name="AirBags"  onChange={handleChange} className="form-control">
@@ -264,7 +259,7 @@ const AddNewVehicleShowRoom=()=>{
 	                         	           
 	                         	                    </div>
 	                         	                    
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>SunRoof</label>
 	                         	                         <select name="SunRoof"  onChange={handleChange} className="form-control">
 	                         	                                 <option>Select Sunroof</option>
@@ -278,7 +273,7 @@ const AddNewVehicleShowRoom=()=>{
 	                         	                    </div>
 
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Safety Features</label>
 	                         	                         <select name="SafetyFeatures"  onChange={handleChange} className="form-control">
 	                         	                                 <option>Select Features</option>
@@ -291,12 +286,12 @@ const AddNewVehicleShowRoom=()=>{
 	                         	                         </select>
 	                         	                    </div>
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Vehicle Import</label>
 	                         	                         <input type="file" name="VehicleImport"  onChange={handleChange} className="form-control"/>
 	                         	                    </div>
 
-	                         	                    <div className="col-md-3">
+	                         	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                         	                         <label>Vehicle Status</label>
 	                         	                         <select className="form-control" name="VehicleStatus" onChange={handleChange}>
                                                                  <option>Select Status</option>
@@ -306,7 +301,7 @@ const AddNewVehicleShowRoom=()=>{
 	                         	               </div>
 
 	                         	               <div className="row text-end mt-2">
-	                         	                     <div className="offset-6 col-md-6">
+	                         	                     <div className="offset-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-end ">
 	                         	                           <input type="button" value="Save" className="btn btn-success add" onClick={Save_click}/>
 	                         	                           <input type="button" value="Exit" className="btn btn-danger add mx-1"/>
 	                         	                     </div>

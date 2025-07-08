@@ -11,7 +11,7 @@ const ClearVehicle=()=>{
 
 	            function ClearVehicleGrid(){
 	            	
-	            	axios.get('http://localhost:5000/getClearVehicleDetails')
+	            	axios.get('https://garage-backend-8rs3.onrender.com/getClearVehicleDetails')
 	            	.then((response)=>{
                                        setClearvehicle(response.data);                 
 	            	})
@@ -23,7 +23,7 @@ const ClearVehicle=()=>{
 
 	            function Delete_click(id)
 	            {
-                      axios.delete(`http://localhost:5000/ClearVehicleDetails/${id}`)
+                      axios.delete(`https://garage-backend-8rs3.onrender.com/ClearVehicleDetails/${id}`)
                         .then((response)=>{
                                           
                                            ClearVehicleGrid();

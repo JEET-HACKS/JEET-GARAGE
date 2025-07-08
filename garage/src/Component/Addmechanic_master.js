@@ -25,7 +25,7 @@ const AddMechanic=()=>{
      },[]);
 
      function GetMechanics(){
-        axios.get(`http://localhost:5000/EditMechanics/${id}`)
+        axios.get(`https://garage-backend-8rs3.onrender.com/EditMechanics/${id}`)
         .then((response)=>{
                            var data1=response.data[0];
                            setM_name(data1.M_Name);
@@ -42,7 +42,7 @@ const AddMechanic=()=>{
      function GetService()
      {
               
-              axios.get('http://localhost:5000/getServices')
+              axios.get('https://garage-backend-8rs3.onrender.com/getServices')
               .then((response)=>{
                                SetServicedropdown(response.data);
               })
@@ -55,7 +55,7 @@ const AddMechanic=()=>{
        const AddMechanic_click=()=>{
           
           
-          axios.post(`http://localhost:5000/addmechanicsdetails/${id}`,{
+          axios.post(`https://garage-backend-8rs3.onrender.com/addmechanicsdetails/${id}`,{
                M_Name,Specialization,MobileNo,AadharNo,Salary
 
           })
@@ -91,7 +91,7 @@ const AddMechanic=()=>{
 
        function AddService_click()
        {
-          axios.post('http://localhost:5000/addservicedetails',{
+          axios.post('https://garage-backend-8rs3.onrender.com/addservicedetails',{
                     Service_Name,Cost
           })
           .then((response)=>{
