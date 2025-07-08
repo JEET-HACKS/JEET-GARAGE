@@ -2,7 +2,6 @@ import React,{useEffect} from 'react';
 import axios from 'axios';
 import {useNavigate,useParams} from 'react-router-dom';
 
-
 const Visitors_Entry=()=>{
 	                            var textBoxesIds=["Entry_date","Visitors_Name",
 	                       	                 "MobileNo","PurposeOfVisit",
@@ -18,7 +17,7 @@ const Visitors_Entry=()=>{
 	                            },[])
 
 	                            function GetVisitorsDetails(){
-                                                       axios.get(`http://localhost:5000/EditVisitorsDetails/${id}`)
+                                                       axios.get(`https://garage-backend-8rs3.onrender.com/EditVisitorsDetails/${id}`)
                                                        .then((response)=>{
                                                        	                 var val=response.data[0];
                                                        	                 textBoxesIds.forEach(id=>{
@@ -57,7 +56,7 @@ const Visitors_Entry=()=>{
                                                        	   });
 	                             	
 	                             	 console.log(update);
-	                             	 axios.post(`http://localhost:5000/SaveVisitors/${id}`,update)
+	                             	 axios.post(`https://garage-backend-8rs3.onrender.com/SaveVisitors/${id}`,update)
 	                             	 .then((resp)=>{
                                                    if(resp.data == "ok")
                                                    {
@@ -76,7 +75,7 @@ const Visitors_Entry=()=>{
 	                             	}
 	                             	else
 	                             	{
-	                             		axios.post(`http://localhost:5000/SaveVisitors/${id}`,ChildData)
+	                             		axios.post(`https://garage-backend-8rs3.onrender.com/SaveVisitors/${id}`,ChildData)
 	                             		.then((resp)=>{
                                                    
                                                    if(resp.data == "ok")
@@ -93,12 +92,7 @@ const Visitors_Entry=()=>{
 	                             		})
 	                             		
 	                             	}
-	                             
-	                             	
-                                    
-	                             	
-
-
+	     
 	                             }    
 	                             function Exit_click()
 	                             {
@@ -137,22 +131,22 @@ const Visitors_Entry=()=>{
                                  <div className="container-fluid">
 	                   	                <div className="row">
 	                   	                
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>Date</label>
 	                   	                         <input type="date" name="Entry_date" onChange={selectionChange} className="form-control"/>
 	                   	                    </div>
 
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>Full Name</label>
 	                   	                         <input type="text" name="Visitors_Name" onChange={selectionChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
 
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>Phone No.</label>
 	                   	                         <input type="number" name="MobileNo" max="10" onKeyPress={handleKeyPress} onChange={selectionChange} className="form-control"/>
 	                   	                    </div>
 
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>Purpose of Visit</label>
 	                   	                         <input type="text" name="PurposeOfVisit" onChange={selectionChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
@@ -160,34 +154,34 @@ const Visitors_Entry=()=>{
 
 	                   	                  <div className="row">
 	                   	                
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>Interested Car Model</label>
 	                   	                         <input type="text" name="InterestedVehicleModel" onChange={selectionChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
 
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>In Time</label>
 	                   	                         <input type="time" name="CheckInTime" onChange={selectionChange} className="form-control"/>
 	                   	                    </div>
 
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>Salesperson/Executive Name</label>
 	                   	                         <input type="text" name="StaffName" onChange={selectionChange} className="form-control"/>
 	                   	                    </div>
 
-	                   	                        <div className="col-md-3">
+	                   	                        <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>Out Time</label>
 	                   	                         <input type="time" name="CheckOutTime" onChange={selectionChange} className="form-control"/>
 	                   	                    </div>
 
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-6">
 	                   	                         <label>Review</label>
 	                   	                         <input type="text" name="Reviews" onChange={selectionChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
 	                   	                 </div> 
 
 	                   	                 <div className="row mt-2">                  
-	                   	                    <div className="offset-6 col-md-6 text-end">
+	                   	                    <div className="offset-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-end ">
 	                   	                         <input type="button" className="btn btn-success add" onClick={Save_Click} value="Save"/>
 	                   	                         <input type="button" className="btn btn-danger add mx-2" value="Exit" onClick={Exit_click}/>
 	                   	                    </div>             

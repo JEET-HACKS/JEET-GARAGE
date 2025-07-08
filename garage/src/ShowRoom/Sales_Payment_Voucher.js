@@ -31,7 +31,7 @@ const Sales_Payment_Voucher=()=>{
                                                          
 	                                function GetAccountName()
 	                                {
-                                     axios.get('http://localhost:5000/CustomerBind')
+                                     axios.get('https://garage-backend-8rs3.onrender.com/CustomerBind')
                                      .then((res)=>{
                                              setAccountName(res.data);
                                       })
@@ -50,7 +50,7 @@ const Sales_Payment_Voucher=()=>{
                                           	                           }
                                           });
                                           setPayment(updaterows);
-                                          axios.get(`http://localhost:5000/InvoiceBindForSales/${account}`)
+                                          axios.get(`https://garage-backend-8rs3.onrender.com/InvoiceBindForSales/${account}`)
                                           .then((res)=>{
                                                         setAccountDetails(res.data); 
                                                         document.getElementsByName('Pending_Amt')[0].value=res.data[2].Total;
@@ -118,7 +118,7 @@ const Sales_Payment_Voucher=()=>{
 	                                		                           }
 	                                	})
 	                               
-	                                	axios.post('http://localhost:5000/SalesPaymentVoucher',update)
+	                                	axios.post('https://garage-backend-8rs3.onrender.com/SalesPaymentVoucher',update)
 	                                	.then((res)=>{
 	                                		              if(res.data == "ok")
 	                                		              {
@@ -248,8 +248,8 @@ const Sales_Payment_Voucher=()=>{
 	                                                 </div>
 	                                            </div>
 
-	                                             <div className="row mt-5">                  
-				                   	                    <div className="offset-6 col-md-6 text-end">
+	                                             <div className="row mt-2">                  
+				                   	                    <div className="offset-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-end ">
 				                   	                         <input type="button" className="btn btn-success add" onClick={Save_Click} value="Save"/>
 				                   	                         <input type="button" className="btn btn-danger add mx-2" value="Exit" onClick={Exit_Click}/>
 				                   	                    </div>             

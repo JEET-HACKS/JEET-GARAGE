@@ -39,7 +39,7 @@ const Vehicle_Sale_Invoice=()=>{
 
                             function GetAccountName()
 	                                {
-                                             axios.get('http://localhost:5000/CustomerBind')
+                                             axios.get('https://garage-backend-8rs3.onrender.com/CustomerBind')
                                              .then((res)=>{
                                                            setAccountName(res.data);
                                              })
@@ -50,7 +50,7 @@ const Vehicle_Sale_Invoice=()=>{
                            
                            function VehicleBind()
                            {
-                               axios.get('http://localhost:5000/GetVehicleBind')
+                               axios.get('https://garage-backend-8rs3.onrender.com/GetVehicleBind')
                                .then((response)=>{
                                                   setVehicle(response.data);      
                                })
@@ -62,7 +62,7 @@ const Vehicle_Sale_Invoice=()=>{
                            function  handleChange(event){
                                    var selectionvalue=event.target.value;
                                    
-                                   axios.get(`http://localhost:5000/GetSalesVehicleFuntion/${selectionvalue}`)
+                                   axios.get(`https://garage-backend-8rs3.onrender.com/GetSalesVehicleFuntion/${selectionvalue}`)
                                    .then((response)=>{ 
                                                       var vehicle=response.data[0]; 
                                                       
@@ -214,7 +214,7 @@ const Vehicle_Sale_Invoice=()=>{
 																    TCSAmt:Number(Number(row.TaxAmt)*Number(tcsper))/100,
 																    PurchaseAmt:Number(row.GSTAmt+row.CessAmt+row.TAmount)+Number(Number(row.TaxAmt)*Number(tcsper))/100,
 																    TcsPer:Number(tcsper),
-                                                                    Pending_Amt:Number(row.GSTAmt+row.CessAmt+row.TAmount)+Number(Number(row.TaxAmt)*Number(tcsper))/100
+                                    Pending_Amt:Number(row.GSTAmt+row.CessAmt+row.TAmount)+Number(Number(row.TaxAmt)*Number(tcsper))/100
 																    
 																  };
 																});
@@ -251,7 +251,7 @@ const Vehicle_Sale_Invoice=()=>{
                                   var purchase_data=Object.fromEntries(Purchase);
                                   console.log(purchase_data);
                                      */}
-                                   axios.post('http://localhost:5000/SaveVehicleSales',update)
+                                   axios.post('https://garage-backend-8rs3.onrender.com/SaveVehicleSales',update)
                                    .then((res)=>{
                                                   alert(res.data);
                                                   if(res.data == "ok")
@@ -324,15 +324,15 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	           <div className="container-fluid">
 	                   	                <div className="row">
 	                   	                
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Sales Invoice No</label>
 	                   	                         <input type="text" name="SalesInvn" onChange={selectionChange} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Sales Invoice Date</label>
 	                   	                         <input type="date" name="SalesInvnDate"  onChange={selectionChange} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Account Name</label>
 	                   	                          <select className="form-control" name="CustomerName" onChange={selectionChange}>
 	                   	                                            <option>Select Account Name</option>
@@ -345,14 +345,14 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	                                           }
 	                   	                            </select>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                          <label>Vehicle No.</label>
 	                   	                         <input type="text"   name="VehicleNo" onChange={selectionChange} className="form-control"/>
 	                   	                    </div>
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                          <label>Staff Name</label>
 	                   	                         <input type="text" name="StaffName" onChange={selectionChange} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
@@ -372,7 +372,7 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                      <div className="col-md-3">
+	                   	                      <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                            <label>Vehicle</label>
 	                   	                            <select name="VehicleBrandName" onChange={(e)=>handleChange(e)} className="form-control">
 		                                                    <option>Select Vehicle</option>
@@ -388,62 +388,62 @@ const Vehicle_Sale_Invoice=()=>{
 		                                             
 	                   	                      </div>
 
-	                   	                      <div className="col-md-3">
+	                   	                      <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                            <label>Model Name</label>
-	                   	                            {
-													    Purchase.length > 0 ? 
+    	                   	                            {
+                      													    Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													        <input 
-													        
-													          type="text" 
-													          name="ModelName" 
-													          value={row.ModelName}  
-													          className="form-control bg-light" 
-													          disabled
-													        />
-													      ))
-													      :
-													       <input 
-													        
-													          type="text" 
-													          name="ModelName" 
-													          value=""
-													          className="form-control bg-light" 
-													          disabled
-													        />
+                      													      // If there are items in Purchase, render a list of input fields for each row
+                      													      Purchase.map((row, index) => (
+                      													        <input 
+                      													        
+                      													          type="text" 
+                      													          name="ModelName" 
+                      													          value={row.ModelName}  
+                      													          className="form-control bg-light" 
+                      													          disabled
+                      													        />
+                      													      ))
+                      													      :
+                      													       <input 
+                      													        
+                      													          type="text" 
+                      													          name="ModelName" 
+                      													          value=""
+                      													          className="form-control bg-light" 
+                      													          disabled
+                      													        />
 													   
-                                                    }
+                                                        }
 	                   	                            
 	                   	                           
 	                   	                      </div>
-	                   	                       <div className="col-md-3">
+	                   	                       <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                            <label>Variant</label>
 	                   	                             {
-													    Purchase.length > 0 ? 
+                      													    Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													        <input type="text" name="Variant" value={row.Variant}   className="form-control bg-light" disabled/>
-													      ))
-													      :
-													      <input type="text" name="Variant" value=""  className="form-control bg-light" disabled/>
+                      													      // If there are items in Purchase, render a list of input fields for each row
+                      													      Purchase.map((row, index) => (
+                      													        <input type="text" name="Variant" value={row.Variant}   className="form-control bg-light" disabled/>
+                      													      ))
+                      													      :
+                      													      <input type="text" name="Variant" value=""  className="form-control bg-light" disabled/>
 													   
                                                     }
 	                   	                            
 	                   	                      </div>
-	                   	                       <div className="col-md-3">
+	                   	                       <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                            <label>Color</label>
 	                   	                                                {
-													    Purchase.length > 0 ? 
+                      												  	    Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													          <input type="text" name="VehicleColor" value={row.VehicleColor} className="form-control"/>
-													      ))
-													      :
-													      <input type="text" name="VehicleColor" value=""   className="form-control bg-light" disabled/>
+                      													      // If there are items in Purchase, render a list of input fields for each row
+                      													      Purchase.map((row, index) => (
+                      													          <input type="text" name="VehicleColor" value={row.VehicleColor} className="form-control"/>
+                      													      ))
+                      													      :
+                      													      <input type="text" name="VehicleColor" value=""   className="form-control bg-light" disabled/>
 													   
                                                     }
 	                   	                           
@@ -453,22 +453,22 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                       <div className="col-md-3">
+	                   	                       <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                            <label>Qty</label>
 	                   	                            <input type="text" name="Qty"  onChange={ChangeQty} onKeyPress={handleKeyPress} className="form-control bg-light"/>
 	                   	                      </div>
-	                   	                      <div className="col-md-3">
+	                   	                      <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                            <label>Ex-Showroom Price</label>
 	                   	                            {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													         
-													          <input type="text" name="SalesPrice" value={row.SalesPrice} className="form-control bg-light" disabled/>
-													      ))
-													      :
-													      <input type="text" name="SalesPrice" value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (
+                    													         
+                    													          <input type="text" name="SalesPrice" value={row.SalesPrice} className="form-control bg-light" disabled/>
+                    													      ))
+                    													      :
+                    													      <input type="text" name="SalesPrice" value="" className="form-control bg-light" disabled/>
 	                   	                            }
 													   
                                                     
@@ -540,23 +540,23 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Total Amount</label>
 	                   	                             {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													         
-													         
-													          <input type="text" name="TAmount" value={row.TAmount} className="form-control bg-light" disabled/>
-													      ))
-													      :
-													      <input type="text" name="TAmount" value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (
+                    													         
+                    													         
+                    													          <input type="text" name="TAmount" value={row.TAmount} className="form-control bg-light" disabled/>
+                    													      ))
+                    													      :
+                    													      <input type="text" name="TAmount" value="" className="form-control bg-light" disabled/>
 	                   	                            }
 	                   	                         
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>GST%</label>
 	                   	                         <select name="GstPer"  onChange={(e)=>GstChange(e)} className="form-control">
 	                   	                                  <option>Select GST%</option>
@@ -564,124 +564,124 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	                                  <option>18</option>
 	                   	                         </select>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>GST Amount</label>
 	                   	                           {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (       
-													          <input type="text" name="GSTAmt"  value={row.GSTAmt} className="form-control bg-light" disabled/>
-													      ))
-													      :
-													      <input type="text" name="GSTAmt"  value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (       
+                    													          <input type="text" name="GSTAmt"  value={row.GSTAmt} className="form-control bg-light" disabled/>
+                    													      ))
+                    													      :
+                    													      <input type="text" name="GSTAmt"  value="" className="form-control bg-light" disabled/>
 	                   	                            }
 	                   	                         
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>CGST Amount</label>
 	                   	                          {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													         
-													            <input type="text" name="CgstAmt"  value={row.CgstAmt} className="form-control bg-light" disabled/>
-													          
-													      ))
-													      :
-													      <input type="text" name="CgstAmt"  value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (
+                    													         
+                    													            <input type="text" name="CgstAmt"  value={row.CgstAmt} className="form-control bg-light" disabled/>
+                    													          
+                    													      ))
+                    													      :
+                    													      <input type="text" name="CgstAmt"  value="" className="form-control bg-light" disabled/>
 	                   	                            }
 	                   	                       
 	                   	                    </div>
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>SGST Amount</label>
 	                   	                                             {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													         
-													            <input type="text" name="SgstAmt"  value={row.SgstAmt} className="form-control bg-light" disabled/>
-													          
-													      ))
-													      :
-													      <input type="text" name="SgstAmt"  value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (
+                    													         
+                    													            <input type="text" name="SgstAmt"  value={row.SgstAmt} className="form-control bg-light" disabled/>
+                    													          
+                    													      ))
+                    													      :
+                    													      <input type="text" name="SgstAmt"  value="" className="form-control bg-light" disabled/>
 	                   	                            }
 	                   	                         
 
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Cess%</label>
 	                   	                         <input type="text" name="CessPer" onChange={(e)=>CessChange(e)} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Cess Amount</label>
 	                   	                          {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													         
-													          <input type="text" name="CessAmt" value={row.CessAmt} className="form-control bg-light" disabled/>
-													      ))
-													      :
-													      <input type="text" name="CessAmt" value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (
+                    													         
+                    													          <input type="text" name="CessAmt" value={row.CessAmt} className="form-control bg-light" disabled/>
+                    													      ))
+                    													      :
+                    													      <input type="text" name="CessAmt" value="" className="form-control bg-light" disabled/>
 	                   	                            }
 	                   	                         
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Tax Amount</label>
 	                   	                                           {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													         
-													          <input type="text" name="TaxAmt" value={row.TaxAmt} className="form-control bg-light" disabled/>
-													      ))
-													      :
-													      <input type="text" name="TaxAmt" value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (
+                    													         
+                    													          <input type="text" name="TaxAmt" value={row.TaxAmt} className="form-control bg-light" disabled/>
+                    													      ))
+                    													      :
+                    													      <input type="text" name="TaxAmt" value="" className="form-control bg-light" disabled/>
 	                   	                            }
 	                   	                        
 	                   	                    </div>
 	                   	                </div>
 
 	                   	                <div className="row">
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>TCS%</label>
 	                   	                         <input type="text" name="TcsPer" onChange={(e)=>TcsChange(e)} onKeyPress={handleKeyPress} className="form-control"/>
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>TCS Amount</label>
 	                   	                                      {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													         
-													          <input type="text" name="TCSAmt" value={row.TCSAmt} className="form-control bg-light" disabled/>
-													      ))
-													      :
-													      <input type="text" name="TCSAmt" value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (
+                    													         
+                    													          <input type="text" name="TCSAmt" value={row.TCSAmt} className="form-control bg-light" disabled/>
+                    													      ))
+                    													      :
+                    													      <input type="text" name="TCSAmt" value="" className="form-control bg-light" disabled/>
 	                   	                            }
 	                   	                       
 	                   	                    </div>
-	                   	                    <div className="col-md-3">
+	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                         <label>Net Amount</label>
 	                   	                                       {
 	                   	                              Purchase.length > 0 ? 
 
-													      // If there are items in Purchase, render a list of input fields for each row
-													      Purchase.map((row, index) => (
-													         
-													          <input type="text" name="PurchaseAmt" value={row.PurchaseAmt} className="form-control bg-light" disabled/>
-													      ))
-													      :
-													      <input type="text" name="PurchaseAmt" value="" className="form-control bg-light" disabled/>
+                    													      // If there are items in Purchase, render a list of input fields for each row
+                    													      Purchase.map((row, index) => (
+                    													         
+                    													          <input type="text" name="PurchaseAmt" value={row.PurchaseAmt} className="form-control bg-light" disabled/>
+                    													      ))
+                    													      :
+                    													      <input type="text" name="PurchaseAmt" value="" className="form-control bg-light" disabled/>
 	                   	                            }
 	                   	                        
 	                   	                         
@@ -690,7 +690,7 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	                </div>
 
 	                   	                <div className="row mt-2">                  
-	                   	                    <div className="offset-6 col-md-6 text-end">
+	                   	                    <div className="offset-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-end ">
 	                   	                         <input type="button" className="btn btn-success add" value="Save" onClick={Save_Click}/>
 	                   	                         <input type="button" className="btn btn-danger add mx-2" onClick={Exit_Click} value="Exit"/>
 	                   	                    </div>             

@@ -12,7 +12,7 @@ const Visitors_View=()=>{
 
                             function GetVisitorsDetails()
                             {
-                                axios.get('http://localhost:5000/GetVisitorsDetails')
+                                axios.get('https://garage-backend-8rs3.onrender.com/GetVisitorsDetails')
                                 .then((resp)=>{
                                        
                                                SetVisitorsDetails(resp.data);
@@ -41,7 +41,7 @@ const Visitors_View=()=>{
                             function Delete_Click(id)
                             {
                                 
-                                axios.delete(`http://localhost:5000/DeleteVisitors/${id}`)
+                                axios.delete(`https://garage-backend-8rs3.onrender.com/DeleteVisitors/${id}`)
                                 .then((response)=>{
                                                    GetVisitorsDetails();
                                 })

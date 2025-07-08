@@ -18,7 +18,7 @@ const Sales_Invoice_For_Vehicle_Ledger=()=>{
 	                               function Delete_click(id)
 	                               {
                                         //alert(id);
-                                        axios.delete(`http://localhost:5000/DeletePurchaseVoucher/${id}`)
+                                        axios.delete(`https://garage-backend-8rs3.onrender.com/DeletePurchaseVoucher/${id}`)
                                         .then((response)=>{
 
                                         })
@@ -28,7 +28,7 @@ const Sales_Invoice_For_Vehicle_Ledger=()=>{
 	                               }
 		                            function GetAccountName()
 		                            {
-	                                     axios.get('http://localhost:5000/CustomerBind')
+	                                     axios.get('https://garage-backend-8rs3.onrender.com/CustomerBind')
 	                                     .then((res)=>{
 	                                                   setAccountName(res.data);
 	                                     })
@@ -52,7 +52,7 @@ const Sales_Invoice_For_Vehicle_Ledger=()=>{
                                    function BindGrid(id)
                                    {
                                    	      
-                                          axios.get(`http://localhost:5000/BindSalesLedger/${id}`)
+                                          axios.get(`https://garage-backend-8rs3.onrender.com/BindSalesLedger/${id}`)
                                           .then((res)=>{
                                                         setPurchaseDetails(res.data);
                                           })

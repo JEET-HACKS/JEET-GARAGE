@@ -15,7 +15,7 @@ const TestDrive_View=()=>{
 
 	                        function GetTestDriveDetail()
 	                        {
-	                        	 axios.get('http://localhost:5000/GetTestDriveDetails')
+	                        	 axios.get('https://garage-backend-8rs3.onrender.com/GetTestDriveDetails')
 	                        	 .then((resp)=>{
                                                 setTestDriveDetails(resp.data);
 
@@ -37,14 +37,14 @@ const TestDrive_View=()=>{
 
 	                        function Delete_Click(id)
 	                        {
-                               alert(id);
-                               axios.delete(`http://localhost:5000/DeleteTestDriveDetails/${id}`);
+                              
+                               axios.delete(`https://garage-backend-8rs3.onrender.com/DeleteTestDriveDetails/${id}`);
                                GetTestDriveDetail();
 	                        }
 
 	                        function Edit_Click(id)
 	                        {
-	                        	alert(id);
+	                        	
 	                        	Redirect(`/TestDrive/${id}`);
 	                        }
 	                      return(
