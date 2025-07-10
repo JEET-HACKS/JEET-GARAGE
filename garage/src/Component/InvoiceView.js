@@ -173,6 +173,32 @@ const InvoiceView=()=>{
                      {
                         Redirect('/InvoiceBill/'+'add');
                      }
+	              function Clear_click(id)
+                     {
+                            axios.get(`http://localhost:5000/ClearVehicleFromService/${id}`)
+                            .then((response)=>{
+                                               alert(response.data);
+                                               axios.post('http://localhost:5000/addClearVehicleFromService',response.data)     
+                                               .then((response)=>{
+                                                                  alert(response.data);
+                                                                  axios.delete(`http://localhost:5000/deleteClearVehicleFromService/${id}`)
+                                                                  .then((response)=>{
+                                                                                     alert('Vehicle Clear Successfully');
+                                                                                     Redirect('/ClearVehicle');
+                                                                  })
+                                                                  .catch((err)=>{
+
+                                                                  })
+                                               })
+                                               .catch((err)=>{
+
+                                               })
+                            })
+                            .catch((err)=>{
+
+                            })
+                       
+                        }
 
 	                  return(<div className="container-fluid">
                                    
@@ -217,7 +243,8 @@ const InvoiceView=()=>{
                                                               <td>
                                                                  <button class="btn btn-danger fw-bold" onClick={()=>Delete_click(option._id)}>Delete</button>
                                                                  <button class="btn btn-success mx-2 fw-bold" onClick={()=>UpdateClick(option._id)}>Edit</button>
-                                                                 <button class="btn btn-primary fw-bold"  onClick={()=>Print_click(option._id)}>Print</button>                            
+                                                                 <button class="btn btn-primary fw-bold"  onClick={()=>Print_click(option._id)}>Print</button>
+								 <button class="btn btn-secondary fw-bold" onClick={()=>Clear_click(option.VehicleNo)}>Clear</button>      
                                                               </td>
                                                          </tr>
                                                     )
