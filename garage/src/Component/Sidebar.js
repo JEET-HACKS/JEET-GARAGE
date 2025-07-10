@@ -20,6 +20,7 @@ import * as GrIcons from 'react-icons/gr';
 import * as FaIcons from "react-icons/fa";
 import * as Fa6Icons from "react-icons/fa6";
 import * as  BiIcons from "react-icons/bi";
+import * as  GiIcons from "react-icons/gi";
 
 
 const Sidebar=({isOpen,mode})=>{
@@ -43,7 +44,7 @@ const Sidebar=({isOpen,mode})=>{
 	               }
 	              
                    const getIconComponent = (iconName) =>
-                              MdIcons[iconName] || FcIcons[iconName] || TbIcons[iconName] || GrIcons[iconName] || FaIcons[iconName] || Fa6Icons[iconName] || BiIcons[iconName]  || null;
+                              MdIcons[iconName] || FcIcons[iconName] || TbIcons[iconName] || GrIcons[iconName] || FaIcons[iconName] || Fa6Icons[iconName] || BiIcons[iconName] || GiIcons[iconName] || null;
 
                    function Sidebar_Click(name)
                    {
