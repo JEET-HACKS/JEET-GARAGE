@@ -33,10 +33,11 @@ const ClearVehicle=()=>{
                         })
 	            }
 
-	            function Invoice_click(id)
+	            function GatePass_click(id)
 	            {
-	            	localStorage.setItem("status", "add");
-                    Redirect('/InvoiceBill/'+id);
+	            	// localStorage.setItem("status", "add");
+                        // Redirect('/InvoiceBill/'+id);
+			    alert('Work Under Progress...')
                     
                     
 	            	
@@ -81,7 +82,7 @@ const ClearVehicle=()=>{
 			                                                   <td>{option.mechdata.M_Name}</td>
 			                                                   <td>
 			                                                       <input type="button" className="btn btn-danger fw-bold" value="Delete" onClick={()=>Delete_click(option._id)} />   
-			                                                       <input type="button" className="btn btn-success mx-2 fw-bold" onClick={()=>Invoice_click(option._id)} value="Invoice"/>   
+			                                                       <input type="button" className="btn btn-success mx-2 fw-bold" onClick={()=>GatePass_click(option._id)} value="GatePass"/>   
 			                                                   </td>
 			                                               </tr>
 				                	                	
