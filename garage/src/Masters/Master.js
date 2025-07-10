@@ -50,6 +50,7 @@ const Master_Page=()=>{
                                                          <option>GiIndiaGate</option>
                                                          <option>BiSolidPurchaseTagAlt</option>
                                                          <option>FaUsers</option>
+				                        <option>MdDashboard</option>
 
 
 
@@ -84,6 +85,7 @@ const Master_Page=()=>{
                                                          <option>/TestDrive_View</option>
                                                          <option>/Sales_Invoice_For_Vehicle_Ledger</option>
                                                          <option>/Sales_Payment_Voucher</option>
+				                         <option>/DashBoard</option>
 
 	                   	                         </select>
 	                   	                    </div>
