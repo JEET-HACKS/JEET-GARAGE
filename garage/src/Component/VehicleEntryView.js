@@ -31,34 +31,35 @@ const VehicleEntryDetail=()=>{
           navigate("/AddNewVehicle/"+id);
         
      }
-     function clear_click(id,status)
+     function Invoice_click(id,status)
      {
         if(status == "Ok")
         {
-        
-            axios.get(`https://garage-backend-8rs3.onrender.com/ClearVehicleFromService/${id}`)
-            .then((response)=>{
-                               alert(response.data);
-                               axios.post('http://localhost:5000/addClearVehicleFromService',response.data)     
-                               .then((response)=>{
-                                                  alert(response.data);
-                                                  axios.delete(`http://localhost:5000/deleteClearVehicleFromService/${id}`)
-                                                  .then((response)=>{
-                                                                     alert('Vehicle Clear Successfully');
-                                                                     navigate('/ClearVehicle');
-                                                  })
-                                                  .catch((err)=>{
+            localStorage.setItem("status", "add");
+            navigate('/InvoiceBill/'+id);
+            // axios.get(`https://garage-backend-8rs3.onrender.com/ClearVehicleFromService/${id}`)
+            // .then((response)=>{
+            //                    alert(response.data);
+            //                    axios.post('http://localhost:5000/addClearVehicleFromService',response.data)     
+            //                    .then((response)=>{
+            //                                       alert(response.data);
+            //                                       axios.delete(`http://localhost:5000/deleteClearVehicleFromService/${id}`)
+            //                                       .then((response)=>{
+            //                                                          alert('Vehicle Clear Successfully');
+            //                                                          navigate('/ClearVehicle');
+            //                                       })
+            //                                       .catch((err)=>{
 
-                                                  })
-                               })
-                               .catch((err)=>{
+            //                                       })
+            //                    })
+            //                    .catch((err)=>{
 
-                               })
-            })
-            .catch((err)=>{
+            //                    })
+            // })
+            // .catch((err)=>{
 
-            })
-            // navigate('/ClearVehicle/'+id);
+            // })
+            // // navigate('/ClearVehicle/'+id);
         }
         else{
             alert('Vehicle Status is Not Ok');
@@ -127,7 +128,7 @@ const VehicleEntryDetail=()=>{
                                     <td>
                                         <button class="btn btn-danger fw-bold" onClick={()=>delete_click(option._id)}>Delete</button>
                                         <button class="btn btn-primary mx-2 fw-bold" onClick={()=>Edit_click(option._id)}>Edit</button>
-                                        <button class="btn btn-secondary fw-bold" onClick={()=>clear_click(option._id,option.VehicleStatus)}>Clear</button>
+                                        <button class="btn btn-secondary fw-bold" onClick={()=>Invoice_click(option._id,option.VehicleStatus)}>Invoice</button>
                                     </td>
                               
                                 </tr>
