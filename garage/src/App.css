@@ -453,3 +453,26 @@ header{
 .login-logo {
   font-size: 36px;
 }*/
+
+@media (max-width: 800px) {
+  
+  .newdiv{
+  
+  width:80%;
+  position: relative;
+  bottom: 300px;
+  z-index: 999;
+  border: 2px solid black;
+  padding: 15px;
+  
+  border-radius: 10px;
+  background: ghostwhite;
+  margin: 0 auto;
+}
+}
+
+@media (max-width: 399px) {
+  input[value="Dashboard"] {
+         display: none;
+  }
+}
