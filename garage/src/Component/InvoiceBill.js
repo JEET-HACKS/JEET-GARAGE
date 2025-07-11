@@ -87,12 +87,10 @@ const InvoiceBill=()=>{
 
 	               function GetInvoiceDetails(id){
 	               	        
-	               	        axios.get(`https://garage-backend-8rs3.onrender.com/GetVehicleClearDetails/${id}`)
+	               	        axios.get(`http://localhost:5000/GetVehicleClearDetails/${id}`)
 	               	        .then((response)=>{  
                                                var data=response.data[0];
-                                               setEntry_date(data.Entry_date);
-                                              {/*setInvoice(data.InvoiceNo);*/} 
-                                             
+                                               setEntry_date(data.Entry_date);                                            
                                                setCustomerName(data.CustomerName);
                                                setCust_MobileNo(data.Cust_MobileNo);
                                                setCust_Address(data.Cust_Address);
@@ -103,22 +101,15 @@ const InvoiceBill=()=>{
                                                setMechanic_Name(data.Mechanic_Name);
                                                setService_Type(data.Service_Type);
                                                setVehicleClearDate(data.VehicleClearDate);
+                                               
+                                               setInvoice("INVN"+data.InvNo);
+                                               
+                                               {(data.cost)?setServiceCost(data.cost):setServiceCost(data.ServiceCost)}
+                                               {(data.cost)?setNetAmt(data.cost):setNetAmt(data.ServiceCost)}
                                                var count=0;
                                                var status=localStorage.getItem("status");
-                                               {status == "add"
-                                                ?
-                                                setServiceCost(data.cost.Cost) || setInvoice("INVN"+data.InvNo)
-                                                 :
-                                                 setServiceCost(data.ServiceCost) || setInvoice(data.InvoiceNo)
-                                               }
-                                               {status == "edit" ? setServiceCost(data.ServiceCost):setServiceCost(data.cost.Cost) }
-                                               {status == "add" ? setNetAmt(data.cost.Cost) :setNetAmt(data.ServiceCost)}
-                                               {status == "edit" ? setNetAmt(data.ServiceCost):setNetAmt(data.cost.Cost) }
-                                              {/* {data.cost.Cost ? setServiceCost(data.cost.Cost) : setServiceCost(data.ServiceCost)}*/}
-                                               // ;
-                                               {/*setServiceCost(data.ServiceCost)*/}
                                                setInvoiceDate(data.InvoiceDate);
-                                              {/*setNetAmt(data.ServiceCost);*/} 
+                                             
                                                
 	               	        })
 	               	        .catch((err)=>{
@@ -126,6 +117,7 @@ const InvoiceBill=()=>{
 	               	        })
 
 	               }
+	
 	               function Exit_click()
 	               {
 	               	navigate('/InvoiceView');
