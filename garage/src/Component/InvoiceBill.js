@@ -102,10 +102,10 @@ const InvoiceBill=()=>{
                                                setService_Type(data.Service_Type);
                                                setVehicleClearDate(data.VehicleClearDate);
                                                
-                                               setInvoice("INVN"+data.InvNo);
+                                               setInvoice(data.InvoiceNo);
                                                
                                                {(data.cost)?setServiceCost(data.cost):setServiceCost(data.ServiceCost)}
-                                               {(data.cost)?setNetAmt(data.cost):setNetAmt(data.ServiceCost)}
+                                               {(data.cost)?setNetAmt(data.cost):setNetAmt(data.NetAmt)}
                                                var count=0;
                                                var status=localStorage.getItem("status");
                                                setInvoiceDate(data.InvoiceDate);
@@ -158,7 +158,7 @@ const InvoiceBill=()=>{
                        .then((response)=>{
                        	                 if(response.data == "ok")
                        	                 {
-                       	                 	alert(response.data);
+                       	                 alert('Save Successfully');
                        	                  navigate("/InvoiceView")
                        	                 }
                        	                 else{
