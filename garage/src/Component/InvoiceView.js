@@ -22,7 +22,7 @@ const InvoiceView=()=>{
 
                      function Delete_click(id)
                      {
-                        alert(id);
+                        
 
                         axios.delete(`https://garage-backend-8rs3.onrender.com/DeleteInvoiceDetails/${id}`)
                         .then((response)=>{
