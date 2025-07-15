@@ -58,7 +58,7 @@ const AddVehicle=()=>{
 	{
 		axios.get(`https://garage-backend-8rs3.onrender.com/getUpdatedDetails/${id}`)
 		.then((response)=>{
-                              alert(response.data.Entry_date);
+        
                               setEntry_date(response.data.Entry_date);
                               setCustomerName(response.data.CustomerName);
                               setCust_MobileNo(response.data.Cust_MobileNo);
