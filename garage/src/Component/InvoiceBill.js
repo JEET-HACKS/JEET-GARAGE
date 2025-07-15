@@ -87,7 +87,7 @@ const InvoiceBill=()=>{
 
 	               function GetInvoiceDetails(id){
 	               	        
-	               	        axios.get(`http://localhost:5000/GetVehicleClearDetails/${id}`)
+	               	        axios.get(`https://garage-backend-8rs3.onrender.com/GetVehicleClearDetails/${id}`)
 	               	        .then((response)=>{  
                                                var data=response.data[0];
                                                setEntry_date(data.Entry_date);                                            
