@@ -49,6 +49,7 @@ export default function AuthCard({onLoginSuccess}) {
             if(response.data.auth)
             {
                alert("Login Successfully");
+	       localStorage.setItem("userid",UserName);	    
                localStorage.setItem("token",response.data.auth);
               // login();
                //onLoginSuccess();
