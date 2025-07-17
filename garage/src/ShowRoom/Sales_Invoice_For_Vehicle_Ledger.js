@@ -42,6 +42,12 @@ const Sales_Invoice_For_Vehicle_Ledger=()=>{
                                         
                                         //Redirect(`/VehiclePurchase/${id}`);
 	                               }
+
+	                                 function GatePass_Click(id)
+	                               {
+                                        
+                                        //Redirect(`/VehiclePurchase/${id}`);
+	                               }
 	                                function onselectionChanged(event)
                                    {
                                    	
@@ -60,6 +66,7 @@ const Sales_Invoice_For_Vehicle_Ledger=()=>{
 
                                           })
                                    }
+	                           
 	                                         
 	                                    return(
 	                                    	   <div className="container-fluid">
@@ -109,7 +116,8 @@ const Sales_Invoice_For_Vehicle_Ledger=()=>{
                                                                                 <td>{value.Pending_Amt}</td>
                                                                                 <td>
 			                                                                         <input type="button" className="btn btn-danger fw-bold" value="Delete" onClick={()=>Delete_click(value._id)} />   
-			                                                                         <input type="button" className="btn btn-success mx-2 fw-bold" value="Edit" onClick={()=>Edit_Click(value._id)}/>   
+			                                                                         <input type="button" className="btn btn-secondary mx-2 fw-bold" value="Edit" onClick={()=>Edit_Click(value._id)}/>
+											         <input type="button" className="btn btn-success mx-2 fw-bold" value="GatePass" onClick={()=>GatePass_Click(value._id)}/>
 			                                                                    </td>
 
                                                                             </tr>                
