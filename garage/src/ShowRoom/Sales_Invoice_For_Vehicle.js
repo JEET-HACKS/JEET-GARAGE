@@ -242,7 +242,8 @@ const Vehicle_Sale_Invoice=()=>{
 														      SalesInvnDate:newdata[1],
 														      CustomerName:newdata[2],
 														      StaffName:newdata[3],
-														      VehicleNo:newdata[4]
+														      VehicleNo:newdata[4],
+													              Payment_Type:'its invoice'		    
 														    };
 														});
                             	setPurchaseInvoice(update);
