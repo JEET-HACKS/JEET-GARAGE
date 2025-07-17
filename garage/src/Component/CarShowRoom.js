@@ -37,7 +37,7 @@ const CarShowRoom=()=>{
 	                  	                 ?
 	                  	                   Showvehicle.map((option)=>(
                                                   <div className="col-lg-4 col-md-6 mb-2">
-	                  	                               <div class="card text-left" style={{width:"400px"}}>
+	                  	                               <div class="card text-left" style={{width:"100%"}}>
 	                                                       <img className="card-img-top" src={option.VehicleImport} alt="Car Image" />
 										                   <div class="card-body">
 										                       <h4 class="card-title">{option.ModelName}</h4>
