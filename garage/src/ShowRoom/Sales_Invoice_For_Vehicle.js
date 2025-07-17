@@ -460,7 +460,7 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	                            <input type="text" name="Qty"  onChange={ChangeQty} onKeyPress={handleKeyPress} className="form-control bg-light"/>
 	                   	                      </div>
 	                   	                      <div className="col-xl-3 col-lg-6 col-md-12">
-	                   	                            <label>Ex-Showroom Price</label>
+	                   	                            <label>Sales Price</label>
 	                   	                            {
 	                   	                              Purchase.length > 0 ? 
 
