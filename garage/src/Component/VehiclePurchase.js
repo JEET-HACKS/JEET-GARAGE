@@ -218,7 +218,7 @@ const VehiclePurchase=()=>{
 																    ...row,
 																    CessAmt:Number(Number(row.TAmount)*Number(cessper))/100,
 																    CessPer:Number(cessper),
-																    TaxAmt:Number(row.GSTAmt+row.CessAmt+row.TAmount)
+																   TaxAmt:Number(row.GSTAmt)+Number(row.CessAmt)+Number(row.TAmount)
 																  };
 																});
                                                    setPurchaseInvoice(updaterows);
