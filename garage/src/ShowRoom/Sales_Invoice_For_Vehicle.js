@@ -243,7 +243,8 @@ const Vehicle_Sale_Invoice=()=>{
 														      CustomerName:newdata[2],
 														      StaffName:newdata[3],
 														      VehicleNo:newdata[4],
-													              Payment_Type:'its invoice'		    
+													              Payment_Type:'its invoice',
+														      DebitAmt:'0'
 														    };
 														});
                             	setPurchaseInvoice(update);
