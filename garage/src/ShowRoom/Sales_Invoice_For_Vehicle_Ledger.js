@@ -68,7 +68,7 @@ const Sales_Invoice_For_Vehicle_Ledger=()=>{
 		                               	       <div className="row mechdetail mb-3">
 			                                       <div className="col-lg-10 col-md-12 col-sm-12 col-12 mb-2">
 			                                           <select className="form-control"  onChange={(e)=>onselectionChanged(e)}>
-                                                                <option>Select Purchase Account</option>
+                                                                <option>Select Sales Account</option>
                                                                  {
 	                   	                                           	Account.map((open)=>(
 	                   	                                           		        <option value={open._id}>
