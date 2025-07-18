@@ -28,7 +28,7 @@ const Staff_Master=()=>{
 	                            },[])
 
 	                             function BindStaffDetails(){
-                                                       axios.get(`http://localhost:5000/BindStaffDetails/${id}`)
+                                                       axios.get(`https://garage-backend-8rs3.onrender.com/BindStaffDetails/${id}`)
                                                        .then((response)=>{
                                                        	                 var val=response.data[0];
                                                        	                 textboxes_ids.forEach(id=>{
@@ -67,7 +67,7 @@ const Staff_Master=()=>{
                                                        	   });
 	                             	
 	                             	 console.log(update);
-	                             	 axios.post(`http://localhost:5000/AddStaffName/${id}`,update)
+	                             	 axios.post(`https://garage-backend-8rs3.onrender.com/AddStaffName/${id}`,update)
 	                             	 .then((resp)=>{
                                                    if(resp.data == "ok")
                                                    {
@@ -83,7 +83,7 @@ const Staff_Master=()=>{
 	                             		})
 	                             	 
 	                             	}else{
-	                             		     axios.post(`http://localhost:5000/AddStaffName`,Form)
+	                             		     axios.post(`https://garage-backend-8rs3.onrender.com/AddStaffName`,Form)
 	                                  	    .then((response)=>{
 	                                                          
 	                                                           if(response.data == "ok")
