@@ -21,7 +21,7 @@ const Staff_Master_View=()=>{
 
                                function GetStaffDetails()
                                  {
-                                      axios.get('http://localhost:5000/GetStaffDetails')
+                                      axios.get('https://garage-backend-8rs3.onrender.com/GetStaffDetails')
                                       .then((response)=>{
                                                          setStaffDetails(response.data);
                                                          
@@ -36,7 +36,7 @@ const Staff_Master_View=()=>{
                                  {
                             
 
-                                    axios.delete(`http://localhost:5000/DeleteStaffDetails/${id}`)
+                                    axios.delete(`https://garage-backend-8rs3.onrender.com/DeleteStaffDetails/${id}`)
                                     .then((response)=>{
                                                        GetStaffDetails();
                                                       
