@@ -30,10 +30,12 @@ const Vehicle_Sale_Invoice=()=>{
                            var [Vehicle,setVehicle]=React.useState([]);
                            var [FinalTotal,setFinalTotal]=React.useState([]);
                            var [Account,setAccountName]=React.useState([]);
+	                   var [StaffName,setStaffName]=React.useState([]);
 	                               
                            useEffect(()=>{
                            	              GetAccountName();
-                                          VehicleBind();
+				              GetStaffName();
+                                              VehicleBind();
 
                            },[])
 
@@ -47,6 +49,16 @@ const Vehicle_Sale_Invoice=()=>{
 
                                              })
 	                                }
+	                    function GetStaffName()
+                                  {
+                                            axios.get('https://garage-backend-8rs3.onrender.com/StaffBind')
+                                             .then((res)=>{
+                                                           setStaffName(res.data);
+                                             })
+                                             .catch((err)=>{
+                                                            
+                                             })
+                                  }
                            
                            function VehicleBind()
                            {
@@ -356,7 +368,16 @@ const Vehicle_Sale_Invoice=()=>{
 	                   	                <div className="row">
 	                   	                    <div className="col-xl-3 col-lg-6 col-md-12">
 	                   	                          <label>Staff Name</label>
-	                   	                         <input type="text" name="StaffName" onChange={selectionChange} onKeyPress={handleKeyPress} className="form-control"/>
+	                   	                         <select className="form-control" name="StaffName" onChange={selectionChange}>
+                                                                  <option>Select StaffName</option>
+                                                                {
+                                                                  StaffName.map((open)=>(
+                                                                            <option value={open._id}>
+                                                                                       {open.Account_Name}
+                                                                            </option>
+                                                                  ))
+                                                                 }
+                                                  </select>
 	                   	                    </div>
 	                   	                    <div className="col-md-3">
 	                   	                         
