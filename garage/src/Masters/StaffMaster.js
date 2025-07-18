@@ -83,7 +83,7 @@ const Staff_Master=()=>{
 	                             		})
 	                             	 
 	                             	}else{
-	                             		     axios.post(`https://garage-backend-8rs3.onrender.com/AddStaffName`,Form)
+	                             		     axios.post(`https://garage-backend-8rs3.onrender.com/AddStaffName/${id}`,Form)
 	                                  	    .then((response)=>{
 	                                                          
 	                                                           if(response.data == "ok")
