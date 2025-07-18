@@ -44,7 +44,9 @@ import Sales_Invoice_For_Vehicle_Ledger from './ShowRoom/Sales_Invoice_For_Vehic
 import Sales_Payment_Voucher from './ShowRoom/Sales_Payment_Voucher';
 import HelpSuggest from './Component/HelpSuggest';
 import Login from './Component/Login';
-import PrivateRoute from './Component/PrivateComponent'; 
+import PrivateRoute from './Component/PrivateComponent';
+import Staff_Master from './Masters/StaffMaster';
+import Staff_Master_View from './Masters/StaffMasterView';
 
 
 
@@ -154,6 +156,8 @@ function App() {
                       <Route path="/Sales_Invoice_For_Vehicle_Ledger" element={<PrivateRoute element={<Sales_Invoice_For_Vehicle_Ledger />} />} />
                       <Route path="/Sales_Payment_Voucher" element={<PrivateRoute element={<Sales_Payment_Voucher />} />} />
                       <Route path="/HelpSuggest" element={<PrivateRoute element={<HelpSuggest />} />} /> 
+                      <Route path="/Staff_Master/:id" element={<PrivateRoute element={<Staff_Master />} />} />
+                      <Route path="/Staff_Master_View" element={<PrivateRoute element={<Staff_Master_View />} />} />
                                                 
                                                 
                     </Routes>
