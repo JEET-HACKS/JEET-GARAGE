@@ -15,7 +15,7 @@ const Sales_Payment_Voucher=()=>{
                                                       	                      Pending_Amt:"",Type:"Payment",
                                                                                }]);
 	                                  var [childPayment,setChildPayment]=React.useState([{
-	                                  	                                         SalesInvnDate:"",SalesInvn:"",
+	                                  	                              SalesInvnDate:"",SalesInvn:"",
                                                       	                      DebitAmt:"",
                                                       	                      CustomerName:"",
                                                       	                      PurchaseAmt:"",
