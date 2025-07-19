@@ -69,10 +69,10 @@ const Sales_Payment_Voucher=()=>{
                                                   var divide2=amt.split('|')[1];
                                                   var invnamt=divide.split(':')[1];
                                                   var invnamt2=divide2.split(':')[1];
-                                                  alert(invnamt2);
+                                                  
                                                   var adjamt=document.getElementsByName('DebitAmt')[0].value;
                                                   var adjustment=Number(invnamt2)-Number(adjamt); 
-                                                  alert(adjustment);       
+                                                        
                                                   var Remaining=localStorage.getItem("total");
                                                   document.getElementsByName('Pending_Amt')[0].value=Number(Remaining)-Number(adjamt);
                                                   updaterows = Payment.map(row=>{
@@ -90,16 +90,7 @@ const Sales_Payment_Voucher=()=>{
 	                                	   setChildPayment(prev=>({...prev,[name]:value}));
 
 	                                }
-	                                // function AmountChanged(event){
-	                            	  //     var amt=event.target.value;
-	                            	  //     updaterows = Payment.map(row=>{
-	                                //             	             return{
-	                                //             	             	      ...row,
-	                                //             	             	      Pending_Amt:Number(document.getElementsByName('Pending_Amt')[0].value)-Number(amt)
-	                                //             	             }
-	                                //             })
-	                                //     setPayment(updaterows);     
-	                                // }      
+	                                     
 
 
 	                                function Save_Click()
