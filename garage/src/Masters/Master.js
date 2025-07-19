@@ -86,6 +86,7 @@ const Master_Page=()=>{
                                                          <option>/Sales_Invoice_For_Vehicle_Ledger</option>
                                                          <option>/Sales_Payment_Voucher</option>
 				                         <option>/DashBoard</option>
+				                         <option>/Staff_Master_View</option>
 
 	                   	                         </select>
 	                   	                    </div>
