@@ -204,7 +204,7 @@ const Sales_Payment_Voucher=()=>{
                                                                     <option>Select Invoice</option>
                                                                     {
                                                                     	AccountDetails.map((option)=>(
-                                                                                      <option value={option._id}>{`Invn No:${option.SupplierInvn} | AMT:${option.Pending_Amt}`}</option>
+                                                                                      <option value={option._id}>{`Invn No:${option.SalesInvn} | AMT:${option.Pending_Amt}`}</option>
                                                                     	))
                                                                     }
                                                                     
