@@ -45,7 +45,7 @@ const Sales_Invoice_For_Vehicle_Ledger=()=>{
 
 	                                 function GatePass_Click(id)
 	                               {
-                                        
+                                          alert('Work Under Progress...');
                                         //Redirect(`/VehiclePurchase/${id}`);
 	                               }
 	                                function onselectionChanged(event)
