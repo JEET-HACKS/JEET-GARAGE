@@ -123,7 +123,7 @@ const Sales_Payment_Voucher=()=>{
 	                                		              if(res.data == "ok")
 	                                		              {
 	                                		              	alert("Save Payment Successfully");
-                                                      Redirect('/Vehicle_Purchase_Ledger');
+                                                      Redirect('/Sales_Invoice_For_Vehicle_Ledger');
 	                                		              }
 	                                		              else{
 	                                		              	alert(res.data);
