@@ -76,7 +76,7 @@ const VehicleEntryDetail=()=>{
 
           axios.delete(`https://garage-backend-8rs3.onrender.com/deleteVehicleDetails/${id}`)
           .then((response)=>{
-                       alert(response.data);
+                       
                        GetVehicleEntryDetails();
           })
           .catch((err)=>{
