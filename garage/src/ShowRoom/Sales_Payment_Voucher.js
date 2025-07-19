@@ -123,7 +123,7 @@ const Sales_Payment_Voucher=()=>{
 	                                		              if(res.data == "ok")
 	                                		              {
 	                                		              	alert("Save Payment Successfully");
-                                                      Redirect('/Sales_Invoice_For_Vehicle_Ledger');
+                                                                        Redirect('/Sales_Invoice_For_Vehicle_Ledger');
 	                                		              }
 	                                		              else{
 	                                		              	alert(res.data);
@@ -141,26 +141,24 @@ const Sales_Payment_Voucher=()=>{
                                            Redirect('/Sales_Invoice_For_Vehicle_Ledger');
 	                                   }
 	                                   const handleKeyPress = (e) => {
-	                             
-																																	  const { name, key } = e;
-																																	   var currentValue = e.target.value;
-																																	  if (e.target.name === "MobileNo") {
-																																	    // Allow only digits
-																																	    if (!/^\d$/.test(key) || currentValue.length >= 10) {
-																																	      e.preventDefault();
-																																	    }
-																																	  }
+	                             																									   var currentValue = e.target.value;
+								  if (e.target.name === "MobileNo") {
+								    // Allow only digits
+								    if (!/^\d$/.test(key) || currentValue.length >= 10) {
+								      e.preventDefault();
+								    }
+								  }
 
-																																	  if (e.target.name == "Visitors_Name" || e.target.name == "Model" || e.target.name == "Variant" || e.target.name == "Color"  || e.target.name == "StaffName" || e.target.name == "Reviews"  ) {
-																																	  	
-																																	    // Allow only letters and space
-																																	    if (!/^[a-zA-Z ]$/.test(key)) {
-																																	      e.preventDefault();
-																																	    }
-																																	  }
+								  if (e.target.name == "Visitors_Name" || e.target.name == "Model" || e.target.name == "Variant" || e.target.name == "Color"  || e.target.name == "StaffName" || e.target.name == "Reviews"  ) {
+									
+								    // Allow only letters and space
+								    if (!/^[a-zA-Z ]$/.test(key)) {
+								      e.preventDefault();
+								    }
+								  }
 
-																																	  // Add other fields as needed
-																																	};
+															  // Add other fields as needed
+								};
 	                               
 	                                return(
 	                                	   <div className="container-fluid text-left">
