@@ -30,7 +30,7 @@ const Sidebar=({isOpen,mode})=>{
 	               useEffect(()=>{
 	               	 
 	               	 BindSidebar();
-	               })
+	               },[])
 
 	               function BindSidebar()
 	               {
