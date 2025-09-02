@@ -267,7 +267,7 @@ const Vehicle_Sale_Invoice=()=>{
                                      */}
                                    axios.post('https://garage-backend-8rs3.onrender.com/SaveVehicleSales',update)
                                    .then((res)=>{
-                                                  alert(res.data);
+                                                  //alert(res.data);
                                                   if(res.data == "ok")
                                                   {
                                                   	alert("Sales Saved Successfully");
