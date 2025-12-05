@@ -7,12 +7,8 @@ const VehicleEntryDetail=()=>{
      const [VehicleDetails,setVehicleDetails]=React.useState('');
      var stopper="";
      useEffect(()=>{
-                             if(stopper == "")
-                             GetVehicleEntryDetails();
-
-                         
-                         
-          },[1]);
+                             GetVehicleEntryDetails();       
+          },[]);
      function GetVehicleEntryDetails(){
               axios.get('https://garage-backend-8rs3.onrender.com/getVehicleDetails')
               .then((response)=>{
