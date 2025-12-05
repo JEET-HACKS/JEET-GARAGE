@@ -48,6 +48,7 @@ const Sidebar=({isOpen,mode})=>{
 
                    function Sidebar_Click(name)
                    {
+					   alert(name);
                       Redirect(name);
                    }           
 
