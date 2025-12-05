@@ -86,10 +86,20 @@ const path = require('path');
 // jeet
 
 app.post('/login', async (req,resp)=>{
+	// changes
+    const { UserName, Password } = req.body;
+	
+	 if (!UserName || !Password) {
+            return resp.status(400).send("Incorrect Username or Password");
+        }
 
-	if(req.body.UserName && req.body.Password){
+	let user=await User.findOne([UserName]);
+	// const isMatch = await bcrypt.compare(Password, user.Password);
+	// changes
+	
+	// if(req.body.UserName && req.body.Password){
 
-			let user=await User.findOne(req.body);
+			// let user=await User.findOne(req.body);
 			if(user)
 	        {
 		    jwt.sign({user}, jwtkey,{expiresIn:"2h"},(err,token)=>{
@@ -107,10 +117,10 @@ app.post('/login', async (req,resp)=>{
         	 	 resp.send("incorrect UserName Or Password");
         	 }
 
-	}
-	else{
-		resp.send("incorrect UserName Or Password");
-	}
+	// }
+	// else{
+	// 	resp.send("incorrect UserName Or Password");
+	// }
 
 })
 
