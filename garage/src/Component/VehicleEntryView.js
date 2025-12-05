@@ -12,7 +12,7 @@ const VehicleEntryDetail=()=>{
 
                          
                          
-          },[]);
+          },[1]);
      function GetVehicleEntryDetails(){
               axios.get('https://garage-backend-8rs3.onrender.com/getVehicleDetails')
               .then((response)=>{
